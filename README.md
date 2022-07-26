@@ -15,5 +15,12 @@ Juan Ignacio Lopez, 36 años, actualmente resposable de logistica en el sector d
 
 Victo Emilio Quintana, 32 años, comerciante, encargado de una tienda de ropa orientado al rock, series, peliculas y cultura pop en general. Es la primera vez que me familarizo con el tema de programacion, espero aprender y seguir aumentando conocimiento a lo largo de este tiempo. Mi familia se conforma por mi esposa y mi hijo, vivimos en la provincia de Corrientes Cap. Amante y practicante de los deportes de contacto KickBoxin, Boxeo y Mma. fanatico de San Lorenzo De Almagro.
 
-REFERENTES DEL MERCADO:
+REFERENTES DEL MERCADO: Los referentes principales son las marcas que conforman el local en este caso SEAQUEST Y RETHINK MUSIC.
+- https://www.seaquestshop.com.ar
+- https://www.rethinkmusicshop.com
+Las competencias directas:
+- https://kyapure3.mitiendanube.com (K.YA PURE)
+- https://www.honkytonkshop.com (HONKITONKS)
+- https://www.vitalogy.com.ar (VITALOGY)
+- https://www.quesearockshop.com.ar (QUESEAROCK)
 
