@@ -1,7 +1,7 @@
 # Ejercicio-Ecommerce
-OBJETIVO PROYECTO:
+OBJETIVO PROYECTO: Diseñar una página web centrada en la venta de artículos tales como venta de ropa y accesorios del mundo comic y demás. Teniendo en cuenta las páginas de las competencias y de los mismos distribuidores, para realizar una buena adaptación y que todo se complemente de la mejor manera al momento de relizar el código base de la página web
 
-CONTEXTO PROYECTO:
+CONTEXTO PROYECTO: Se busca que la página contenga todos los datos necesarios y se muestre de una forma dinámica los productos que se tienen en tienda, así como los que se pueden mostrar con un descuento. De igual manera, se busca que se pueda mostrar de una forma mas dinámica los productos y que no sean solamente fotos planas, con la finalidad de dar un plus. (Se buscará la manera de poder incluir música en la pag web)
 
 DESCRIPCIÓN DE PRODUCTOS: Prendas Urbanas (remeras, jens, buzos, gorros y cintos) orientado al rock, comics, anime, peliculas y cultura pop en general.
 
