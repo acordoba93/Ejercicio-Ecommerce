@@ -100,3 +100,34 @@ body{
     cursor: hand;
     background: #3ffb33;
 }
+footer {
+    background-color: white;
+    padding-bottom: 10px;
+}
+.footer-items {
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.footer-items div {
+    flex-direction: row;
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.end-footer {
+    display: block;
+}
+.footer-items i {
+    font-size: 30px;
+    color: #1259C3;
+    padding-bottom: 4px;
+    transition: transform .3s ease-in-out;
+}
+.footer-items i:hover {
+    color: #39B54A;
+}
