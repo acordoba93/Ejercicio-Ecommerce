@@ -1,6 +1,6 @@
 const homeController = {
     visualizarHome: function ( req , res) {
-        res.render("Login")
+        res.render("home")
     }
 }
 module.exports = homeController;
