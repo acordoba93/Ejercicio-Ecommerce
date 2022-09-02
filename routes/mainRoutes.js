@@ -1,16 +1,16 @@
 const express = require("express");
-const homeController = require("../controllers/homecontrollers");
-const logincontroller = require("../controllers/logincontrollers");
-const detailcontroller = require("../controllers/detailcontrollers");
-const carcontroller = require("../controllers/carcontrollers");
-const registercontroller = require("../controllers/registercontrollers");
 const router = express.Router();
 
-router.get("/", homeController.visualizarHome);
-router.get("/Login", logincontroller.visualizarLogin);
-router.get("/detail", detailcontroller.visualizarDetail);
-router.get("/carro", carcontroller.visualizarCar);
-router.get("/Register", registercontroller.visualizarRegistro);
+const carritoController = require("../controllers/controllers/carritoController");
+const homeController = require("../controllers/controllers/homeController");
+const loginController = require("../controllers/controllers/loginController");
+const registerController = require("../controllers/controllers/registerController");
+const detalleController = require("../controllers/controllers/detalleController");
 
+router.get("/carrito", carritoController.visualizarCar);
+router.get("/", homeController.visualizarHome);
+router.get("/login", loginController.visualizarLogin);
+router.get("/register", registerController.visualizarRegistro);
+router.get("/detail", detalleController.visualizarDetail);
 
 module.exports = router;

@@ -1,7 +1,7 @@
-const detailcontroller = {
+const detalleController = {
     visualizarDetail: function ( req , res) {
         res.render("ProductDetail")
     }
 }
-module.exports = detailcontroller;
+module.exports = detalleController;
 

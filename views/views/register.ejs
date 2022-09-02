@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/stylesregister.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Registro</title>
+</head>
+<body>
+   <header>
+   </header>
+    <div class="formulario">
+    <h2>
+       Registrate 
+    </h2>
+       </div>
+   <div class="formu-datos">
+     <label class="dato" for="Nombre">NOMBRE </label>
+     <input type="text" name="nombre" id="nombre">
+     <br> 
+     <label class="dato" for="Apellido">APELLIDO </label>     
+     <input type="text" name="Apellido" id="Apellido">
+     <br>
+     <label class="dato-numero" for="DNI">DNI </label>
+     <input type="text" name="DNI" id="DNI">
+     <br>  
+     <label class="dato-numero" for="celular">CELULAR</label>
+     <input type="tel" name="celular" id="celular">
+     <br>
+     <label class="dato-numero" for="Fecha de Nacimiento">FECHA DE NACIMIENTO</label>
+     <input type="date" name="fecha" value="2000-01-01" min="1900-01-01" max="2100-01-01"><br>
+     <label class="dato" for="Email">EMAIL</label>
+     <input type="email" name="Email" id="Email">
+     <br> 
+     <label class="dato" for="Contraseña">CONTRASEÑA </label>
+     <input type="password" name="Contraseña" id="Contraseña">
+     <br>   
+     <label class="dato" for="Repetir Contraseña">REPETIR CONTRASEÑA </label>
+     <input type="password" name="Repetir Contraseña" id="repetir Contraseña">
+     <br> 
+     <label class="dato">SELECCIONA GENERO</label>
+     <select class="dato-genero" name="Genero">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Indefinido">Indefinido</option>
+     </select><br>
+     <div class="botonera">
+         <button class="botones" type="reset">Borrar</button> 
+         <button class="botones" type="submit">Registrate</button>
+     </div>             
+   </div>
+   <div class="banner">
+      <img src="images/ova-logo.jpg" alt="logotipo">
+   </div>
+   <%- include("partials/footer") %>
+ </body>
+</html>
