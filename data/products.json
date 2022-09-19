@@ -1,0 +1,41 @@
+[
+    {
+    "id": 1,
+    "nombre": "remera seaquest",
+    "descripcion": "remera de anime",
+    "talle": "M",
+    "precio": 4200,
+    "imagen": "remera-rtk.2.jpg"
+},
+   { "id": 2,
+    "nombre": "remera rethink",
+    "descripcion": "remera de rock",
+    "talle": "M",
+    "precio": 3600,
+    "imagen": "remera-rtk.3.jpg"
+},
+
+   { "id": 3,
+    "nombre": "remera seaquest",
+    "descripcion": "remera de pelicula",
+    "talle": "M",
+    "precio": 4500,
+    "imagen": "remera-rtk.4.jpg"
+},
+
+   { "id": 4,
+    "nombre": "remera seaquest",
+    "descripcion": "remera de serie",
+    "talle": "M",
+    "precio": 4700,
+    "imagen": "remera-rtk.5.jpg"
+},
+
+   { "id": 5,
+    "nombre": "remera rethink",
+    "descripcion": "remera de arte",
+    "talle": "M",
+    "precio": 4900,
+    "imagen": "remera-rtk.6.jpg"
+}
+]
