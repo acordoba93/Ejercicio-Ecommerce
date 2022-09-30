@@ -4,37 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">   
     <title>Products</title>
 </head>
 <body>
-    <div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Nuestro Catálogo de Productos</h2>
-			</div>
-		
-			<% for(let producto of productos ) { %>
+    <%- include("partials/header") %>
+ 
+        <main>
+            <section class="last-visit">
+                    <h3>Catálogo de producos</h3>
+                    <div class="products">
+                        <% for(let producto of productos ) { %>
 
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/products/detail/<%= producto.id %>">
-							<figure class="product-box_image">
-								<img src="/images/<%= producto.imagen %>" alt="imagen de producto">
-							</figure>
-							<article class="product-box_data">
-								<h2>$<%= producto.precio %></h2>
-								<span><%= producto.descripcion %></span>
-								<p><%= producto.nombre %></p>
-								<i class="fas fa-truck"></i>
-							</article>
-						</a>
-					</section>
-				</div>
-	
-				<% } %>
-		
-		</div>
-	</div>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <section class="product-box">
+                                    <a href="/products/detail/<%= producto.id %>">
+                                        <figure class="product-box_image">
+                                            <img src="/images/<%= producto.imagen %>">
+                                        </figure>
+                                    </a>
+                                    <article class="product-box_description">
+                                        <h4>$<%= producto.precio %></h4>
+                                        <span><%= producto.descripcion %></span>
+                                        <p>talle<%= producto.talle %></p>
+                                        <i class="fas fa-truck"></i>
+                                    </article>
+                                </section>
+                            </div>
+                            <% } %>
+                    </div>                
+            </section>
+		</main>
+    <%- include("partials/footer") %>
     
 </body>
 </html>
