@@ -8,7 +8,13 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const homeController = {
     visualizarHome: function ( req , res) {
         const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        res.render("home", { productos: products });
+
+        const productosEnOferta = products.filter((p) => p.categoria == "oferta");
+        const productosPrecioDeLista = products.filter((p) => p.categoria == "precio de lista");
+
+
+
+        res.render("home", { productos: products, productosEnOferta, productosPrecioDeLista });
     },
     search: function (req , res) {
         const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));

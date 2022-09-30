@@ -5,14 +5,16 @@
     "descripcion": "remera de anime",
     "talle": "M",
     "precio": 4200,
-    "imagen": "remera-rtk.2.jpg"
+    "imagen": "remera-rtk.2.jpg",
+    "categoria": "oferta"
 },
    { "id": 2,
     "nombre": "remera rethink",
     "descripcion": "remera de rock",
     "talle": "M",
     "precio": 3600,
-    "imagen": "remera-rtk.3.jpg"
+    "imagen": "remera-rtk.3.jpg",
+    "categoria": "oferta"
 },
 
    { "id": 3,
@@ -20,7 +22,8 @@
     "descripcion": "remera de pelicula",
     "talle": "M",
     "precio": 4500,
-    "imagen": "remera-rtk.4.jpg"
+    "imagen": "remera-rtk.4.jpg",
+    "categoria": "precio de lista"
 },
 
    { "id": 4,
@@ -28,7 +31,9 @@
     "descripcion": "remera de serie",
     "talle": "M",
     "precio": 4700,
-    "imagen": "remera-rtk.5.jpg"
+    "imagen": "remera-rtk.5.jpg",
+    "categoria": "precio de lista"
+
 },
 
    { "id": 5,
@@ -36,6 +41,7 @@
     "descripcion": "remera de arte",
     "talle": "M",
     "precio": 4900,
-    "imagen": "remera-rtk.6.jpg"
+    "imagen": "remera-rtk.6.jpg",
+    "categoria":"precio de lista"
 }
 ]

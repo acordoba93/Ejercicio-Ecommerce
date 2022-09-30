@@ -3,8 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mainRoutes = require("./routes/mainRoutes");
-const productsRouter = require("./routes/productsRoutes");
-const methodOverride =  require('method-override');
+const productsRoutes = require("./routes/productsRoutes");
 
 app.set('view engine', 'ejs')
 
@@ -18,7 +17,7 @@ app.use('/login', mainRoutes);
 app.use('/register', mainRoutes);
 app.use('/carrito', mainRoutes);
 app.use('/detail', mainRoutes);
-app.use("/products", productsRouter);
+app.use("/products", productsRoutes);
 
 
 // app.get('/login', loginController);

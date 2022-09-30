@@ -7,33 +7,20 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-  // Root - Show all products
   index: (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    // Do the magic
     res.render("products", { productos: products });
   },
-
-  // Detail - Detail from one product
-  detail: (req, res) => {
+  detalle: (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     const producto = products.find((p) => p.id == req.params.id);
-    res.render("detail", { producto: producto });
+    res.render("ProductDetail", { producto });
   },
-
-  // Create - Form to create
   create: (req, res) => {
-    // Do the magic
+    res.render("FormCrearProducto");
   },
-
-  // Create -  Method to store
   store: (req, res) => {
-    // Do the magic
-    // obter el producto del body
-    // Date.now() // 123456789
-    // default-image.png
-    // guardan en el json
-    // redirect
+
   },
 
   // Update - Form to edit

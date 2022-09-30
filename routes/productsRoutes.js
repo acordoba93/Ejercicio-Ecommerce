@@ -8,11 +8,11 @@ const productsController = require("../controllers/productsController");
 router.get("/", productsController.index);
 
 /*** CREATE ONE PRODUCT ***/
-router.get("/algo/", productsController.create);
-router.post("/", productsController.store);
+router.get("/crear/", productsController.create);
+router.post("/create", productsController.store);
 
 /*** GET ONE PRODUCT ***/
-router.get("/detail/:id", productsController.detail);
+router.get("/detalle/:id", productsController.detalle);
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/edit/:id", productsController.edit);
