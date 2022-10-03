@@ -8,7 +8,7 @@ const productsController = require("../controllers/productsController");
 router.get("/", productsController.index);
 
 /*** CREATE ONE PRODUCT ***/
-router.get("/crear/", productsController.create);
+router.get("/create", productsController.create);
 router.post("/create", productsController.store);
 
 /*** GET ONE PRODUCT ***/
@@ -16,9 +16,9 @@ router.get("/detalle/:id", productsController.detalle);
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/edit/:id", productsController.edit);
-router.put("/:id", productsController.update);
+router.put("/edit/:id", productsController.update);
 
 /*** DELETE ONE PRODUCT***/
-router.delete("/:id", productsController.destroy);
+router.delete("/delete/:id", productsController.destroy);
 
 module.exports = router;

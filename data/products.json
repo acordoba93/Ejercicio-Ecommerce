@@ -1,47 +1,79 @@
 [
-    {
-    "id": 1,
-    "nombre": "remera seaquest",
-    "descripcion": "remera de anime",
-    "talle": "M",
-    "precio": 4200,
-    "imagen": "remera-rtk.2.jpg",
-    "categoria": "oferta"
-},
-   { "id": 2,
-    "nombre": "remera rethink",
-    "descripcion": "remera de rock",
-    "talle": "M",
-    "precio": 3600,
-    "imagen": "remera-rtk.3.jpg",
-    "categoria": "oferta"
-},
-
-   { "id": 3,
-    "nombre": "remera seaquest",
-    "descripcion": "remera de pelicula",
-    "talle": "M",
-    "precio": 4500,
-    "imagen": "remera-rtk.4.jpg",
-    "categoria": "precio de lista"
-},
-
-   { "id": 4,
-    "nombre": "remera seaquest",
-    "descripcion": "remera de serie",
-    "talle": "M",
-    "precio": 4700,
-    "imagen": "remera-rtk.5.jpg",
-    "categoria": "precio de lista"
-
-},
-
-   { "id": 5,
-    "nombre": "remera rethink",
-    "descripcion": "remera de arte",
-    "talle": "M",
-    "precio": 4900,
-    "imagen": "remera-rtk.6.jpg",
-    "categoria":"precio de lista"
-}
+ {
+  "id": 1,
+  "nombre": "remera seaquest",
+  "descripcion": "remera de anime",
+  "talle": "M",
+  "precio": "2222",
+  "imagen": "remera-rtk.2.jpg",
+  "categoria": ""
+ },
+ {
+  "id": 2,
+  "nombre": "remera rethink",
+  "descripcion": "remera de rock",
+  "talle": "M",
+  "precio": 3600,
+  "imagen": "remera-rtk.3.jpg",
+  "categoria": "oferta"
+ },
+ {
+  "id": 3,
+  "nombre": "remera seaquest",
+  "descripcion": "remera de pelicula",
+  "talle": "M",
+  "precio": 4500,
+  "imagen": "remera-rtk.4.jpg",
+  "categoria": "precio de lista"
+ },
+ {
+  "id": 4,
+  "nombre": "remera seaquest",
+  "descripcion": "remera de serie",
+  "talle": "M",
+  "precio": 4700,
+  "imagen": "remera-rtk.5.jpg",
+  "categoria": "precio de lista"
+ },
+ {
+  "id": 5,
+  "nombre": "remera rethink",
+  "descripcion": "remera de arte",
+  "talle": "M",
+  "precio": 4900,
+  "imagen": "remera-rtk.6.jpg",
+  "categoria": "precio de lista"
+ },
+ {
+  "id": 1664754922601,
+  "nombre": "ghfgh",
+  "descripcion": "dfgdf",
+  "talle": "dg",
+  "precio": "300",
+  "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1664755967084,
+  "nombre": "hfghgf",
+  "descripcion": "",
+  "talle": "",
+  "precio": "",
+  "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1664755998696,
+  "nombre": "remeron",
+  "descripcion": "remeron",
+  "talle": "l",
+  "precio": "4215",
+  "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1664756097668,
+  "nombre": "",
+  "descripcion": "",
+  "talle": "",
+  "precio": "",
+  "imagen": "remera-rtk.2.jpg"
+ }
 ]

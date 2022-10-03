@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Ovaflowers - Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="/public/css/stylesDetail.css">   
-    </head>
-    <body>
-        <header>
-            <%- include("partials/header") %>
-        </header>
-        <main class="container">
-            <div class="left-column">
-              <img src="/public/images/remera-rtk.12.jpg" width="700" height="700" alt="remera">
-            </div>
-            <div class="right-column">
-              <div class="product-description">
-                <span>Remera</span>
-                <h1>Corazón delator</h1>
-                <p>Remera en color blanco. material algodón. Tallas: S, M, L, XL</p>
-              </div>
-              <div class="product-price">
-                <span>$2.100</span>
-                <a href="/shoppingcart" class="cart-btn">Añadir al carrito</a>
-              </div>
-            </div>
-          </main>
-          <%- include("partials/footer") %>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/stylesDetail.css">
+  <title>Detalle del Producto <%= producto.id %></title>
+</head>
+  <%- include("partials/header") %>
+<body>
+  <main class="container">
+    <div class="left-column">
+      <img src="/images/<%= producto.imagen %>" width="700" height="700" alt="remera">
+    </div>
+    <div class="right-column">
+      <div class="product-description">
+        <span><%= producto.descripcion %></span>
+        <h1><%= producto.nombre %></h1>
+        <p>Talle <%= producto.talle %></p>
+      </div>
+      <div class="product-price">
+        <span>$<%= producto.precio %></span>
+        <a href="/shoppingcart" class="cart-btn">Añadir al carrito</a>
+      </div>
+      <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+        <button type="submit" class="action-button delete">ELIMINAR</button>
+      </form>
+      <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+    </div>
+
+  </main>
+
+
+
+  <%- include("partials/footer") %>
+</body>
 </html>
