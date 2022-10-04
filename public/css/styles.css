@@ -59,6 +59,71 @@ header .logo .form{
 
 }
 
+.product-box_image{
+    height: 200px;
+    width: auto;
+    display: flex;
+    margin: 10px;
+}
+
+.product-box_image img{
+    width: 200px
+}
+
+.last-visit{
+    display: block;
+}
+
+.products{
+    display: flex;
+}
+.last-visit div{
+    display: flex;
+    margin: 10px;
+}
+
+.product-box_description{
+    display: block;
+    margin: 10px;
+}
+
+.product-box_description h4{
+    color: black;
+    align-self: center;
+    margin: 0 5px;
+    pointer-events: none
+}
+
+.product-box_description span{
+    color: black;
+    align-self: center;
+    margin: 0 5px;
+    pointer-events: none
+}
+
+.product-box_description p{
+    color: black;
+    align-self: center;
+    margin: 0 5px;
+    pointer-events: none
+}
+
+.product-box_description i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    color: green;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: relative;
+    left: 90%;
+    top: -30px;
+    transition: transform .3s ease-in-out;
+}
+
 header nav {
     font-size: 12px;
     padding-bottom: 5%;
@@ -318,7 +383,7 @@ footer {
 
 @media (min-width: 769px){
     main section div.products article{
-        width: 22%;
+        width: auto;
     }
 
     div.burger-menu {
@@ -343,4 +408,51 @@ footer {
     .footer-items div {
         width: 30%;
     }
+}
+
+
+/* CSS Crear producto */
+
+.product-data {
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+    display: grid;
+}
+
+.container-products-wrapper{
+    background-color: black;
+    display: flex;
+    align-items:initial;
+    justify-content: left;
+    flex-direction: row;
+}
+
+.buy-now-button {
+    font-size: 20px;
+    color: white;
+    background-color: #04AA6D;
+    padding-bottom: 4px;
+    transition: transform .3s ease-in-out;
+}
+
+.buy-now-button:hover {
+    color: white;
+    background-color: #46a049
+}
+
+.button-create{
+    justify-content: center;
+    display: flex;
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.image img{
+    height: 100px;
+    width: 100px;
 }
