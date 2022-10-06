@@ -23,12 +23,14 @@
       </div>
       <div class="product-price">
         <span>$<%= producto.precio %></span>
-        <a href="/shoppingcart" class="cart-btn">Añadir al carrito</a>
       </div>
-      <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-        <button type="submit" class="action-button delete">ELIMINAR</button>
-      </form>
-      <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+      <div class="button-options">
+        <a href="/carrito" class="cart-btn">Añadir al carrito</a>
+        <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+          <button type="submit" class="action-button-delete">Eliminar</button>
+        </form>
+        <a href="/products/edit/<%= producto.id %>" class="action-button-edit">Editar producto</a>
+      </div>
     </div>
 
   </main>

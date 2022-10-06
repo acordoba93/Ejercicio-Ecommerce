@@ -90,6 +90,7 @@ html, body {
     text-decoration: none;
     padding: 12px 30px;
     transition: all .5s;
+    text-align: center;
 }
 
 .cart-btn:hover {
@@ -425,4 +426,41 @@ footer {
     .footer-items div {
         width: 30%;
     }
+
+    .button-options{
+        width: 200px;
+    }
+}
+
+/* Detalles botones */
+
+.button-options{
+    display: flex;
+    flex-direction: column;
+}
+
+.action-button-delete{
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: none;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.action-button-edit{
+    background-color: yellow;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: none;
+    width: 100%;
+    text-align: center;
 }

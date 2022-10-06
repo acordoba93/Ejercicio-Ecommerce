@@ -9,15 +9,6 @@
   "categoria": ""
  },
  {
-  "id": 2,
-  "nombre": "remera rethink",
-  "descripcion": "remera de rock",
-  "talle": "M",
-  "precio": 3600,
-  "imagen": "remera-rtk.3.jpg",
-  "categoria": "oferta"
- },
- {
   "id": 4,
   "nombre": "remera seaquest",
   "descripcion": "remera de serie",
