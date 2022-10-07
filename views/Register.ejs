@@ -18,11 +18,12 @@
        Registrate 
     </h2>
        </div>
+   <form action="/usuarios/..." method="POST" enctype="multipart/form-data">    
    <div class="formu-datos">
      <label class="dato" for="Nombre">NOMBRE </label>
      <input type="text" name="nombre" id="nombre">
      <br> 
-     <label class="dato" for="Apellido">APELLIDO </label>     
+     <label class="dato" for="Apellido">APELLIDO </label>      
      <input type="text" name="Apellido" id="Apellido">
      <br>
      <label class="dato-numero" for="DNI">DNI </label>
@@ -42,6 +43,10 @@
      <label class="dato" for="Repetir Contraseña">REPETIR CONTRASEÑA </label>
      <input type="password" name="Repetir Contraseña" id="repetir Contraseña">
      <br> 
+     <br>
+     <label class="dato-numero" for="foto">FOTO PERFIL </label>
+     <input type="file" name="imagenUsuario" id="foto">
+     <br>  
      <label class="dato">SELECCIONA GENERO</label>
      <select class="dato-genero" name="Genero">
         <option value="Masculino">Masculino</option>
@@ -49,13 +54,14 @@
         <option value="Indefinido">Indefinido</option>
      </select><br>
      <div class="botonera">
-         <button class="botones" type="reset">Borrar</button> 
+              <button class="botones" type="reset">Borrar</button> 
          <button class="botones" type="submit">Registrate</button>
      </div>             
    </div>
    <div class="banner">
       <img src="images/ova-logo.jpg" alt="logotipo">
    </div>
+</form>
    <%- include("partials/footer") %>
  </body>
 </html>
