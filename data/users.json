@@ -1,13 +1,1 @@
-[
-    {
-      "id": "",
-      "nombre": "" ,
-      "apellido":"" ,
-      "dni": "",
-      "celular": "",
-      "fecha de nacimiento": "" ,
-      "email": "",
-      "contraseña": "",
-      "image": null
-    }
-  ]
+[{ "userName":"emilio", "password":12345678}]
