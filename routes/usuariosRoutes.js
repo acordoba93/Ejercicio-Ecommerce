@@ -23,7 +23,7 @@ const upload = multer ({storage});
 //router.get("/usuariosIndex",usuariosController.index)
 
 //muestar el formulario de creacion 
-router.get("/register", usuariosController.create);
+router.get("/", usuariosController.create);
 
 //Procesa el formulario de creacion
 router.post("/register/id",upload.single("imagenUsuario"), usuariosController.procesarFormulario);

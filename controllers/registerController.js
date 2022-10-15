@@ -12,7 +12,7 @@ const registerController = {
   
   create: function(req, res)  {
       const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-           res.render("register");
+           res.render("Register");
 
     //visualizarRegistro: function ( req , res) {
       //  res.render("register")
