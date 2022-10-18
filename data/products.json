@@ -49,5 +49,62 @@
   "talle": "l",
   "precio": "4215",
   "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1665893874218,
+  "nombre": "",
+  "descripcion": "",
+  "talle": "",
+  "precio": "",
+  "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1665893891085,
+  "nombre": "remeron",
+  "descripcion": "",
+  "talle": "",
+  "precio": "20000",
+  "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1666056117839,
+  "nombre": "remeron",
+  "descripcion": "",
+  "talle": "",
+  "precio": "",
+  "imagen": "remera-rtk.2.jpg",
+  "categoria": ""
+ },
+ {
+  "id": 1666056206700,
+  "nombre": "todpp",
+  "descripcion": "",
+  "talle": "",
+  "precio": "",
+  "imagen": "remera-rtk.2.jpg",
+  "categoria": ""
+ },
+ {
+  "id": 1666057875825,
+  "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1666058025964
+ },
+ {
+  "id": 1666060779451,
+  "nombre": "todpp",
+  "descripcion": "",
+  "talle": "",
+  "precio": "",
+  "categoria": ""
+ },
+ {
+  "id": 1666061026389,
+  "nombre": "todpp",
+  "descripcion": "",
+  "talle": "",
+  "precio": "",
+  "categoria": ""
  }
 ]

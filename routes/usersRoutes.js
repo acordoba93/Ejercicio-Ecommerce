@@ -1,8 +1,30 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const multer = require ("multer");
-const usuariosController = require("../controllers/registerController");
+//const multer = require ("multer");
+
+//const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, "public/images");
+    },
+    filename: function(req, file, cb){
+        console.log({file})
+        cb(null, Date.now() + "" + file.originalname)
+    },
+});
+
+//const upload = multer({storage});
+
+const usersController = require("../controllers/usersController");
+
+router.get("/register", usersController.visualizarRegistro);
+router.post("/register", usersController.create);
+
+router.get("/recuperarPassword", usersController.recuperarPassword);
+
+
+
+
 
 const storage = multer.diskStorage ({
     destination: function (req, file, cb) {
@@ -23,12 +45,13 @@ const upload = multer ({storage});
 //router.get("/usuariosIndex",usuariosController.index)
 
 //muestar el formulario de creacion 
-router.get("/", usuariosController.create);
+//router.get("/", usuariosController.create);
 
 //Procesa el formulario de creacion
-router.post("/register/id",upload.single("imagenUsuario"), usuariosController.procesarFormulario);
+//router.post("/register/id",upload.single("imagenUsuario"), usuariosController.procesarFormulario);
 //,upload.single("name del input")//
 
 //detallede un usuario
-router.get("/Register/:id",usuariosController.show)
+//router.get("/Register/:id",usuariosController.show)
+
 module.exports = router;

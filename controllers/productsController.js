@@ -34,7 +34,7 @@ const controller = {
       descripcion: req.body.descripcion,
       talle: req.body.talle,
       precio: req.body.precio,
-      imagen: "remera-rtk.2.jpg",
+      imagen: req.body.imagen,
       categoria: req.body.categoria
     };
 
@@ -43,7 +43,7 @@ const controller = {
     const data = JSON.stringify(products, null, " ");
     fs.writeFileSync(productsFilePath, data);
 
-    res.redirect("/products/create");
+    res.redirect("/products");
 
   },
   edit: (req, res) => {

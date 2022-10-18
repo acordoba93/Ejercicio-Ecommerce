@@ -4,8 +4,9 @@ const app = express();
 const path = require('path');
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
-const usuariosRoutes = require("./routes/usuariosRoutes");
+const usuariosRoutes = require("./routes/usersRoutes");
 const loginRoutes = require("./routes/loginRoutes");
+const usersRoutes = require("./routes/usersRoutes");
 const methodOverride = require("method-override");
 const session = require('express-session');
 
@@ -23,6 +24,7 @@ app.use('/login', mainRoutes);
 app.use('/register', usuariosRoutes);
 app.use('/carrito', mainRoutes);
 app.use("/products", productsRoutes);
+app.use("/users", usersRoutes);
 //app.use("/usuarioLogueado", loginRoutes);
 
 //app.use('/login', loginRouter);

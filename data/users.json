@@ -1,1 +1,82 @@
-[{ "userName":"emilio", "password":12345678}]
+[
+ {
+  "id": 1,
+  "nombre": "lucas",
+  "apellido": "garcia",
+  "dni": 30900783,
+  "celular": 3513982000,
+  "nacimiento": 28041984,
+  "email": "lucas@hotmail.com",
+  "password": 123222,
+  "repetir": 123222,
+  "imagen": "lucas.jpg",
+  "genero": "masculino"
+ },
+ {
+  "id": 1665896212999
+ },
+ {
+  "id": 1665896547678,
+  "imagenUsuario": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1665897169133,
+  "imagen": "remera-rtk.2.jpg"
+ },
+ {
+  "id": 1665897506865,
+  "nombre": "María",
+  "apellido": "Soto",
+  "dni": "",
+  "celular": "",
+  "nacimiento": "2000-01-01",
+  "email": "florsoto662@gmail.com",
+  "password": "",
+  "repetir": "",
+  "imagen": "remera-rtk.2.jpg",
+  "genero": "Masculino"
+ },
+ {
+  "id": 1666055936407,
+  "nombre": "María",
+  "apellido": "Soto",
+  "dni": "",
+  "celular": "",
+  "nacimiento": "2000-01-01",
+  "email": "florsoto662@gmail.com",
+  "password": "",
+  "repetir": "",
+  "imagen": "remera-rtk.2.jpg",
+  "genero": "Masculino"
+ },
+ {
+  "id": 1666056941598,
+  "nombre": "María",
+  "apellido": "Soto",
+  "dni": "",
+  "celular": "",
+  "nacimiento": "2000-01-01",
+  "email": "florsoto662@gmail.com",
+  "password": "",
+  "repetir": "",
+  "imagen": "remera-rtk.2.jpg",
+  "genero": "Masculino"
+ },
+ {
+  "id": 1666057102681,
+  "nombre": "María",
+  "apellido": "Soto",
+  "dni": "",
+  "celular": "",
+  "nacimiento": "2000-01-01",
+  "email": "florsoto662@gmail.com",
+  "password": "",
+  "repetir": "",
+  "imagen": "remera-rtk.2.jpg",
+  "genero": "Masculino"
+ },
+ {
+  "id": 1666057582968,
+  "imagen": "remera-rtk.2.jpg"
+ }
+]

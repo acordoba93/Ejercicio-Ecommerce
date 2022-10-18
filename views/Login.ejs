@@ -15,15 +15,22 @@
             <h2>Clothes</h2>
         </div>
         <div>
-            <div class="form"> <form action="/usuarioLogueado" method="POST"> 
+            <div class="form"> 
+                <form action="/usuarioLogueado" method="POST"> 
                 <input type="text" placeholder="Nombre de Usuario">
                 <input type="password" placeholder="Constraseña">
                 <button type="submit" name="entrar">ENTRAR</button>
             </form>
-                <a href="/Register">¿Has olvidado tu contraseña?</a>
+                <form action="/users/recuperarPassword" method="GET"></form>
+
+                <a href="/users/RecuperarPassword">¿Has olvidado tu contraseña?</a>
                 <hr>
-                <button class="NuevaC">Crear Nueva Cuenta</button>
-            </div>
+            <div>
+                <form action="/users/Register" method="GET">
+                    <button class="NuevaC" type="submit" name="Crear Nueva Cuenta">Crear Nueva Cuenta
+                    </button>
+                </form>
+            </div>                                                       
         </div>
 
         </div>
