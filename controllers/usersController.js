@@ -27,9 +27,12 @@ const usersController = {
       email: req.body.email,
       password: req.body.password,
       repetir: req.body.repetir,
-      imagen: "remera-rtk.2.jpg",
+      imagen: "baner-ova.jpg",
       genero: req.body.genero
   };
+if(req.file){
+  userNuevo.imagen = req.file.filename
+}
   users.push(userNuevo)
 
   const data = JSON.stringify(users, null, " ");

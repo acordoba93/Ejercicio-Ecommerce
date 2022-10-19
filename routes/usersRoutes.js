@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-//const multer = require ("multer");
 
-//const storage = multer.diskStorage({
+// ***********  MULTER  ***********
+const multer = require("multer");
+
+const storage = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, "public/images");
+        cb(null, "public/images/usuarios");
     },
     filename: function(req, file, cb){
         console.log({file})
@@ -13,12 +15,14 @@ const path = require("path");
     },
 });
 
-//const upload = multer({storage});
+const upload = multer({storage});
+
+
 
 const usersController = require("../controllers/usersController");
 
 router.get("/register", usersController.visualizarRegistro);
-router.post("/register", usersController.create);
+router.post("/register", upload.single("imagen"), usersController.create);
 
 router.get("/recuperarPassword", usersController.recuperarPassword);
 
@@ -26,20 +30,7 @@ router.get("/recuperarPassword", usersController.recuperarPassword);
 
 
 
-const storage = multer.diskStorage ({
-    destination: function (req, file, cb) {
-   cb (null, "../public/images/usuarios")
-   //(null, path.join(__dirname, "../public/images/usuarios")) 
-   },
-    filename: function (req,file,cb) {
-      console.log(file);
-    //const newFilename = "" + Date.now() + path.extname(file.originalname); 
-    cb (null, Date.now() + "" + file.originalname)
-    //cb(null, newFilename),  
-    }    
-});
 
-const upload = multer ({storage});
 
 //muetra un listado de usuario
 //router.get("/usuariosIndex",usuariosController.index)

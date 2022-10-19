@@ -34,9 +34,12 @@ const controller = {
       descripcion: req.body.descripcion,
       talle: req.body.talle,
       precio: req.body.precio,
-      imagen: req.body.imagen,
-      categoria: req.body.categoria
+      categoria: req.body.categoria,
+      imagen: "ova-logo.jpg"
     };
+    if(req.file){
+      productoNuevo.imagen = req.file.filename
+    }
 
     products.push(productoNuevo)
 
