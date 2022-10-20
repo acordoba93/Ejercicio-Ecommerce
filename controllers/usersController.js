@@ -8,8 +8,18 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 
 const usersController = {
+  index: (req, res) =>{
+    const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+    res.render("users", { usuarios: users });
+    },
   visualizarRegistro: function ( req , res) {
       res.render("Register");
+    },
+  detalle: (req, res) =>{
+    const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+    const usuario = users.find((p) => p.id == req.params.id);
+    res.render("userDetail", { usuario });
+
     },
   recuperarPassword: (req, res) =>{
     res.render("RecuperarContraseña");
@@ -41,13 +51,39 @@ if(req.file){
   res.redirect("/login");
 
     },
-  procesarFormulario: function(req, res) {
-     Console.log(req.file);
+    edit: (req, res) => {
+      const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+  
+      const usuario = users.find((p) => p.id == req.params.id);
+  
+      res.render("FormEditarUsuario", { userToEdit: usuario });
     },
-  show: function(req,res) {
-
-    }
-
+    update: (req, res) => {
+      const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+  
+      users.forEach(p => {
+        if(p.id == req.params.id){
+          p.nombre = req.body.nombre,
+          p.email = req.body.email,
+          p.usuario = req.body.usuario,
+          p.genero = req.body.genero,
+          p.password = req.body.password
+        }
+      });
+      const data = JSON.stringify(users, null, " ");
+      fs.writeFileSync(usersFilePath, data);
+  
+      res.redirect("/users/detail/" + req.params.id)
+    },
     
-}
+  destroy: (req, res) => {
+    let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+    users = users.filter((p) => p.id != req.params.id);
+
+    const data = JSON.stringify(users, null, " ");
+    fs.writeFileSync(usersFilePath, data);
+    res.redirect("/users");
+  },
+  };
+
 module.exports = usersController;

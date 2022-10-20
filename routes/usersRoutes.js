@@ -21,8 +21,15 @@ const upload = multer({storage});
 
 const usersController = require("../controllers/usersController");
 
+router.get("/", usersController.index);
 router.get("/register", usersController.visualizarRegistro);
 router.post("/register", upload.single("imagen"), usersController.create);
+router.get("/detail/:id", usersController.detalle);
+
+router.get("/edit/:id", usersController.edit);
+router.put("/edit/:id", usersController.update);
+
+router.delete("/delete/:id", usersController.destroy);
 
 router.get("/recuperarPassword", usersController.recuperarPassword);
 
