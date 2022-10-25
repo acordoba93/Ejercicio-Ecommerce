@@ -19,10 +19,10 @@
       <div class="product-description">
         <span><%= usuario.nombre %></span>
         <h1><%= usuario.email %></h1>
-        <p>Talle <%= usuario.genero %></p>
+        <p><%= usuario.genero %></p>
       </div>
       <div class="product-price">
-        <span>$<%= usuario.usuario %></span>
+        <span><%= usuario.usuario %></span>
       </div>
       <div class="button-options">
         <form action="/users/delete/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex">

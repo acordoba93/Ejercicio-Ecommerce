@@ -24,3 +24,11 @@ Las competencias directas:
 - https://www.vitalogy.com.ar (VITALOGY)
 - https://www.quesearockshop.com.ar (QUESEAROCK)
 
+
+--------------------------------------------------------------
+en la vista home - boton search ---- juan
+en la vista register - errores en el campo ---- emi
+en la vista login - usuario conectado y no conectado  ------ emi
+css en todas las vistas ---- andres
+profile en la vista login ----
+

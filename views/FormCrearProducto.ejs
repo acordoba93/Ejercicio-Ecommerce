@@ -19,6 +19,17 @@
 				</div>
 			</div>
 			<div class="col-12">
+				<ol>
+					<% if(locals.errores) { %>
+						<% for(let error of errores) { %>
+							<li> <% error.msg %></li>
+
+
+					<% } %>
+					<% } %>
+
+
+				</ol>
 				<form action="/products/create" method="POST" enctype="multipart/form-data">
 					<div class="row product-detail">
 						<div class="product-data">
