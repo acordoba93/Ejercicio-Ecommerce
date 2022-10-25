@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { validationResult } = require("express-validator");
+const validacionesProducto = require("../middleware/productoValidaciones");
 
 // ***********  MULTER  ***********
 const multer = require("multer");

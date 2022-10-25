@@ -1,6 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
+const { body } = require("express-validator");
+const usersController = require("../controllers/usersController");
+
+// ... validaciones ... //
+
+const validarUsuarioNuevo = [
+    body("nombre").notEmpty().withMessage("debe estar completo"),
+    body("nacimiento").notEmpty().withMessage("debe colocar una fecha de nacimiento"),
+    body("genero").notEmpty().withMessage("debe selecconar una de las 3 opciones disponibles"),
+    body("celular").notEmpty().withMessage("debe colocar un telefono de contacto"),
+    body("email").notEmpty().withMessage("debe colocar una direccion de correo"),
+    body("usuario").notEmpty().withMessage("debe tener un usuario"),
+    body("password").notEmpty().withMessage("debe tener una contraseña"),
+    body("repetir").notEmpty().withMessage("debe repetir la contraseña creada")
+];
 
 // ***********  MULTER  ***********
 const multer = require("multer");
@@ -22,6 +36,8 @@ const upload = multer({storage});
 const usersController = require("../controllers/usersController");
 
 router.get("/", usersController.index);
+
+router.get("/login", usersController.login);
 router.get("/register", usersController.visualizarRegistro);
 router.post("/register", upload.single("imagen"), usersController.create);
 router.get("/detail/:id", usersController.detalle);
@@ -37,19 +53,6 @@ router.get("/recuperarPassword", usersController.recuperarPassword);
 
 
 
-
-
-//muetra un listado de usuario
-//router.get("/usuariosIndex",usuariosController.index)
-
-//muestar el formulario de creacion 
-//router.get("/", usuariosController.create);
-
-//Procesa el formulario de creacion
-//router.post("/register/id",upload.single("imagenUsuario"), usuariosController.procesarFormulario);
-//,upload.single("name del input")//
-
-//detallede un usuario
-//router.get("/Register/:id",usuariosController.show)
-
 module.exports = router;
+
+

@@ -1,122 +1,142 @@
 [
- {
-  "id": 1,
-  "nombre": "lucas",
-  "apellido": "garcia",
-  "dni": 30900783,
-  "celular": 3513982000,
-  "nacimiento": 28041984,
-  "email": "lucas@hotmail.com",
-  "password": 123222,
-  "repetir": 123222,
-  "imagen": "lucas.jpg",
-  "genero": "masculino"
- },
- {
-  "id": 1665896547678,
-  "imagenUsuario": "remera-rtk.2.jpg"
- },
- {
-  "id": 1665897506865,
-  "nombre": "María",
-  "apellido": "Soto",
-  "dni": "",
-  "celular": "",
-  "nacimiento": "2000-01-01",
-  "email": "florsoto662@gmail.com",
-  "password": "",
-  "repetir": "",
-  "imagen": "remera-rtk.2.jpg",
-  "genero": "Masculino"
- },
- {
-  "id": 1666055936407,
-  "nombre": "María",
-  "apellido": "Soto",
-  "dni": "",
-  "celular": "",
-  "nacimiento": "2000-01-01",
-  "email": "florsoto662@gmail.com",
-  "password": "",
-  "repetir": "",
-  "imagen": "remera-rtk.2.jpg",
-  "genero": "Masculino"
- },
- {
-  "id": 1666056941598,
-  "nombre": "María",
-  "apellido": "Soto",
-  "dni": "",
-  "celular": "",
-  "nacimiento": "2000-01-01",
-  "email": "florsoto662@gmail.com",
-  "password": "",
-  "repetir": "",
-  "imagen": "remera-rtk.2.jpg",
-  "genero": "Masculino"
- },
- {
-  "id": 1666057102681,
-  "nombre": "María",
-  "apellido": "Soto",
-  "dni": "",
-  "celular": "",
-  "nacimiento": "2000-01-01",
-  "email": "florsoto662@gmail.com",
-  "password": "",
-  "repetir": "",
-  "imagen": "remera-rtk.2.jpg",
-  "genero": "Masculino"
- },
- {
-  "id": 1666057582968,
-  "imagen": "remera-rtk.2.jpg"
- },
- {
-  "id": 1666142106438,
-  "imagen": "remera-rtk.2.jpg"
- },
- {
-  "id": 1666142187189,
-  "imagen": "remera-rtk.2.jpg"
- },
- {
-  "id": 1666142224067,
-  "nombre": "Lucas Gonzalo",
-  "apellido": "García",
-  "dni": "34130288",
-  "celular": "12132312",
-  "nacimiento": "2000-01-01",
-  "email": "lucasgarciacab@hotmail.com",
-  "password": "123",
-  "repetir": "123",
-  "imagen": "remera-rtk.2.jpg",
-  "genero": "Masculino"
- },
- {
-  "id": 1666143471650,
-  "nombre": "Lucas Gonzalo",
-  "apellido": "García",
-  "dni": "",
-  "celular": "",
-  "nacimiento": "2000-01-01",
-  "email": "lucasgarciacab@hotmail.com",
-  "password": "",
-  "repetir": "",
-  "imagen": "remera-rtk.2.jpg",
-  "genero": "Masculino"
- },
- {
-  "id": 1666145111902,
-  "nombre": "Lucas Gonzalo",
-  "apellido": "García",
-  "dni": "",
-  "celular": "",
-  "nacimiento": "2000-01-01",
-  "email": "lucasgarciacab@hotmail.com",
-  "password": "",
-  "repetir": "",
-  "imagen": "16661451118960c1235c9e4474c3935ae8750a70a4b14.jpg",
-  "genero": "Masculino"
- }
-]
+    {
+     "id": 1666555761216,
+     "nombre": "",
+     "celular": "",
+     "nacimiento": "2000-01-01",
+     "email": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg",
+     "genero": "Masculino"
+    },
+    {
+     "id": 1666555787183,
+     "nombre": "",
+     "celular": "",
+     "nacimiento": "2000-01-01",
+     "email": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg",
+     "genero": "Masculino"
+    },
+    {
+     "id": 1666555842751,
+     "nombre": "",
+     "celular": "",
+     "nacimiento": "2000-01-01",
+     "email": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg",
+     "genero": "Masculino"
+    },
+    {
+     "id": 1666555892968,
+     "nombre": "",
+     "celular": "",
+     "nacimiento": "2000-01-01",
+     "email": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg",
+     "genero": "Masculino"
+    },
+    {
+     "id": 1666556196030,
+     "nombre": "",
+     "nacimiento": "2000-01-01",
+     "genero": "Masculino",
+     "celular": "",
+     "email": "",
+     "usuario": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg"
+    },
+    {
+     "id": 1666556721081,
+     "nombre": "",
+     "nacimiento": "2000-01-01",
+     "genero": "Masculino",
+     "celular": "",
+     "email": "",
+     "usuario": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg"
+    },
+    {
+     "id": 1666556760344,
+     "nombre": "",
+     "nacimiento": "2000-01-01",
+     "genero": "Masculino",
+     "celular": "",
+     "email": "",
+     "usuario": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg"
+    },
+    {
+     "id": 1666557330784,
+     "nombre": "",
+     "nacimiento": "2000-01-01",
+     "genero": "Masculino",
+     "celular": "",
+     "email": "",
+     "usuario": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg"
+    },
+    {
+     "id": 1666557596564,
+     "nombre": "",
+     "nacimiento": "2000-01-01",
+     "genero": "Masculino",
+     "celular": "",
+     "email": "",
+     "usuario": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg"
+    },
+    {
+     "id": 1666557604778,
+     "nombre": "",
+     "nacimiento": "2000-01-01",
+     "genero": "Masculino",
+     "celular": "",
+     "email": "",
+     "usuario": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg"
+    },
+    {
+     "id": 1666557810974,
+     "nombre": "",
+     "nacimiento": "2000-01-01",
+     "genero": "Masculino",
+     "celular": "",
+     "email": "",
+     "usuario": "",
+     "password": "",
+     "repetir": "",
+     "imagen": "baner-ova.jpg"
+    },
+    {
+     "id": 1666563281431,
+     "nombre": "María",
+     "nacimiento": "2000-01-11",
+     "genero": "Femenino",
+     "celular": "-1",
+     "email": "lucasgarciacab@hotmail.com",
+     "usuario": "10081028",
+     "password": "hsafjhsg",
+     "repetir": "dnv,xn,vm",
+     "imagen": "baner-ova.jpg"
+    }
+   ]
