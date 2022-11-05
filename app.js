@@ -7,7 +7,9 @@ const productsRoutes = require("./routes/productsRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const methodOverride = require("method-override");
 const session = require('express-session');
-
+const cookies= require("cookie-parser");
+//
+const userLoggedMiddleware = require("./middleware/userLoggedMiddleware")
 
 app.set('view engine', 'ejs')
 
@@ -26,9 +28,19 @@ app.use("/users", usersRoutes);
 //app.use("/usuarioLogueado", loginRoutes);
 
 //app.use('/login', loginRouter);
-//app.use(session({secret: 'secreto!'}));
 
-//app.use(cookieParser())
+///////////////
+app.use(session({
+  secret: 'secreto!',
+  resave: false,
+  saveUninitialized: false,
+}));
+
+////////////
+app.use(cookies())
+
+///////////
+app.use(userLoggedMiddleware);
 
 // app.get('/login', loginController);
 
@@ -44,7 +56,7 @@ app.use("/users", usersRoutes);
 //     res.sendFile(__dirname + '/views/ProductDetail.html');
 // });
 
-app.use((req, res, next) => next(createError(404)));
+//app.use((req, res, next) => next(createError(404)));
 
 // ************ error handler ************
 app.use((err, req, res, next) => {
@@ -62,7 +74,13 @@ app.listen(3000, () => {
     console.log("aplicacion corriendo en el puerto 3000");
   });
 
-module.exports = app;
+
+  //////////
+  app.use('/', mainRoutes);
+  app.use('/user', usersRoutes);
+
+
+  //module.exports = app;
 
 
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head', {title : 'Mi perfil: ' + userProfile.first_name}) %>
+<body>
+    <script src="/js/userFormsValidation.js"></script>
+    <%- include('../partials/header') %> 
+    <main class="main-general">
+
+        <div class="userProfileCont">
+            <div class="profileWelcome">
+                <div class="profileImg">
+                    <% if (userProfile) { %>
+                        
+                        
+                        <img src="/img/users/<%= userProfile.image %>" alt="Imagen de perfil de <%= userProfile.firstName %>">
+                    </div>
+                    <h2 class="profileGreeting">Hola <%= userProfile.first_name %>!</h2>
+                    <p class="success-msg"></p>
+            </div>
+            <div class="profileInfo">
+                <p class="infoTitles">Nombre Completo</p>
+                <p class="infoData"><%= userProfile.first_name + ' ' + userProfile.last_name  %></p>
+                <br>
+                <p class="infoTitles">Dirección</p>
+                <p class="infoData"><%= userProfile.address %></p>
+                <br>
+                <p class="infoTitles">E-mail</p>
+                <p class="areas__info"><%= userProfile.email %></p>
+                <br>
+            </div>
+        </div>
+        <div class="profileEditCont">
+           <a href="/users/edit/<%= userProfile.id %>" class="profileEdit">EDITAR</a>
+           <a href="/users/edit/<%= userProfile.id %>/password" class="profileEdit">CAMBIAR CONTRASEÑA</a>
+           <a href="/users/logout" class="profileEdit">CERRAR SESIÓN</a>
+       </div>
+       <% } %>
+
+    </main>
+    <%- include('../partials/footer') %> 
+</body>
+</html>

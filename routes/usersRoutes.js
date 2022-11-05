@@ -1,11 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const { body } = require("express-validator");
-const usersController = require("../controllers/usersController");
+const { body, validationResult } = require("express-validator");
+const path = require("path");
+const multer = require("multer");
+const userController = require("../controllers/userController");
+//MIDDLEWARE//
+const uploadFile = require("../middleware/multerMiddleware");
+const validations =  require("../middleware/validateRegisterMiddleware");
+const guestMiddleware = require('../middleware/guestMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
+
 
 // ... validaciones ... //
 
-const validarUsuarioNuevo = [
+/*const validarUsuarioNuevo = [
     body("nombre").notEmpty().withMessage("debe estar completo"),
     body("nacimiento").notEmpty().withMessage("debe colocar una fecha de nacimiento"),
     body("genero").notEmpty().withMessage("debe selecconar una de las 3 opciones disponibles"),
@@ -14,10 +22,10 @@ const validarUsuarioNuevo = [
     body("usuario").notEmpty().withMessage("debe tener un usuario"),
     body("password").notEmpty().withMessage("debe tener una contraseña"),
     body("repetir").notEmpty().withMessage("debe repetir la contraseña creada")
-];
+];*/
 
 // ***********  MULTER  ***********
-const multer = require("multer");
+//const multer = require("multer");
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -29,21 +37,56 @@ const storage = multer.diskStorage({
     },
 });
 
-const upload = multer({storage});
+//const uploadFile = multer({ storage });
 
-router.get("/", usersController.index);
+//router.get("/", userController.index);
 
-router.get("/login", usersController.login);
-router.get("/register", usersController.visualizarRegistro);
-router.post("/register", upload.single("imagen"), validarUsuarioNuevo, usersController.create);
-router.get("/detail/:id", usersController.detalle);
+router.get("/login", userController.login);
+router.get("/register", userController.visualizarRegistro);
+//
+router.get("/register", userController.register);
+//router.post("/register", uploadFile.single("imagen"), validarUsuarioNuevo, userController.processRegister);
+router.get("/detail/:id", userController.detalle);
 
-router.get("/edit/:id", usersController.edit);
-router.put("/edit/:id", usersController.update);
+router.get("/edit/:id", userController.edit);
+router.put("/edit/:id", userController.update);
 
-router.delete("/delete/:id", usersController.destroy);
+router.delete("/delete/:id", userController.destroy);
 
-router.get("/recuperarPassword", usersController.recuperarPassword);
+router.get("/recuperarPassword", userController.recuperarPassword);
+
+
+//muestar el formulario de creacion 
+router.get("/register", userController.create);
+
+//**Procesa el formulario de creacion
+//router.post("/register/id",uploadFile.single("imagenUsuario"), userController.processRegister);
+//,upload.single("name del input")**/
+
+//////////
+
+// Formulario de registro
+router.get('/register', guestMiddleware, userController.register);
+
+// Procesar el registro
+router.post('/register', uploadFile.single('images'), validations, userController.processRegister);
+
+// Formulario de login
+router.get('/login', guestMiddleware, userController.login);
+
+// Procesar el login
+router.post('/login', userController.loginProcess);
+
+// Perfil de Usuario
+router.get('/profile/', authMiddleware, userController.profile);
+
+// Logout
+router.get('/logout/', userController.logout);
+
+module.exports = router;
+
+
+
 
 // const express = require("express");
 // const router = express.Router();
@@ -69,11 +112,3 @@ router.get("/recuperarPassword", usersController.recuperarPassword);
 // //let usuarioNoLogueado = require('../middlewares/usuarioNoLogueado');
 
 // module.exports = router;
-
-
-
-
-
-module.exports = router;
-
-

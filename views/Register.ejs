@@ -18,11 +18,12 @@
        Registrate 
     </h2>
     </div>
-      <% if (locals.errors) {
-         errors.forEach(error => { %>
-            <p><%= error.msg %></p>
-         <% })
-         } %>
+    <% if (locals.errors) { %>
+     
+      
+       <p><%=  errors.nombre.msg %></p>
+      
+       <% } %>
          <form action="/users/register" method="POST" enctype="multipart/form-data">
             <div class="form-data">
               <label class="dato-numero" for="Nombre">NOMBRE COMPLETO: </label>
