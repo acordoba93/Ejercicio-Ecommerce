@@ -4,9 +4,9 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-//
+
 const mainController = {
-  visualizarHome: function ( req , res) {
+    visualizarHome: function ( req , res) {
         const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
         const productosEnOferta = products.filter((p) => p.categoria == "oferta");
@@ -30,12 +30,9 @@ const mainController = {
   
       res.render("resultado", { productos: resultado, search: search });
       },
-      
-};
-
+    };
 
 
 module.exports = mainController;
-//
-//module.exports = controller
+
 

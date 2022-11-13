@@ -8,8 +8,7 @@ const usersRoutes = require("./routes/usersRoutes");
 const methodOverride = require("method-override");
 const session = require('express-session');
 const cookies= require("cookie-parser");
-//
-const userLoggedMiddleware = require("./middleware/userLoggedMiddleware")
+
 
 app.set('view engine', 'ejs')
 
@@ -20,43 +19,17 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 
 app.use('/', mainRoutes);
-///app.use('/login', mainRoutes);
-///app.use('/register', usuariosRoutes);
-///app.use('/carrito', mainRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", usersRoutes);
-//app.use("/usuarioLogueado", loginRoutes);
-
-//app.use('/login', loginRouter);
-
-///////////////
 app.use(session({
   secret: 'secreto!',
   resave: false,
   saveUninitialized: false,
 }));
 
-////////////
-app.use(cookies())
+app.use(cookies());
 
-///////////
-app.use(userLoggedMiddleware);
-
-// app.get('/login', loginController);
-
-// app.get('/register', (req,res)=>{
-//     res.sendFile(__dirname + '/views/Register.html');
-// });
-
-// app.get('/shoppingcart', (req,res)=>{
-//     res.sendFile(__dirname + '/views/ShoppingCart.html');
-// });
-
-// app.get('/detail', (req,res)=>{
-//     res.sendFile(__dirname + '/views/ProductDetail.html');
-// });
-
-//app.use((req, res, next) => next(createError(404)));
+app.use((req, res, next) => next(createError(404)));
 
 // ************ error handler ************
 app.use((err, req, res, next) => {
@@ -74,13 +47,7 @@ app.listen(3000, () => {
     console.log("aplicacion corriendo en el puerto 3000");
   });
 
-
-  //////////
-  app.use('/', mainRoutes);
-  app.use('/user', usersRoutes);
-
-
-  //module.exports = app;
+module.exports = app;
 
 
 
@@ -88,3 +55,4 @@ app.listen(3000, () => {
 // app.listen(process.env.PORT || 3000, function(){
 //     console.log('Servidor corriendo en el Puerto 3000');
 // });
+

@@ -140,5 +140,133 @@
      "precio": "",
      "categoria": "",
      "imagen": "1666144641506b23f127a37c57a803389122128bc43ec.jpg"
+    },
+    {
+     "id": 1667737991565,
+     "imagen": "ova-logo.jpg"
+    },
+    {
+     "id": 1667740256953,
+     "nombre": "",
+     "descripcion": "",
+     "talle": "",
+     "precio": "",
+     "categoria": "",
+     "imagen": "ova-logo.jpg"
+    },
+    {
+     "id": 1667740419877,
+     "nombre": "",
+     "descripcion": "",
+     "talle": "",
+     "precio": "",
+     "categoria": ""
+    },
+    {
+     "id": 1667740621641,
+     "nombre": "",
+     "descripcion": "",
+     "talle": "",
+     "precio": "",
+     "categoria": "",
+     "imagen": "req.file.imagen"
+    },
+    {
+     "id": 1667741065185,
+     "nombre": "",
+     "descripcion": "",
+     "talle": "",
+     "precio": "",
+     "categoria": ""
+    },
+    {
+     "id": 1667767769963,
+     "nombre": "",
+     "descripcion": "",
+     "talle": "",
+     "precio": "",
+     "categoria": ""
+    },
+    {
+     "id": 1667769033252,
+     "descripcion": "saco polar",
+     "talle": "m",
+     "precio": "",
+     "categoria": ""
+    },
+    {
+     "id": 1667769097552,
+     "descripcion": "saco polar",
+     "talle": "m",
+     "precio": "",
+     "categoria": ""
+    },
+    {
+     "id": 1667769275357,
+     "descripcion": "",
+     "talle": "",
+     "precio": "",
+     "categoria": ""
+    },
+    {
+     "id": 1667794817409,
+     "descripcion": "",
+     "talle": "",
+     "precio": "",
+     "categoria": "",
+     "imagen": "imagenProducto"
+    },
+    {
+     "id": 1667794891232,
+     "descripcion": "de algodon",
+     "talle": "xl",
+     "precio": "5400",
+     "categoria": "oferta",
+     "imagen": "imagenProducto"
+    },
+    {
+     "id": 1667795091728,
+     "nombre": "pantalon",
+     "descripcion": "de algodon",
+     "talle": "s",
+     "precio": "5400",
+     "categoria": "oferta",
+     "imagen": "imagenProducto"
+    },
+    {
+     "id": 1667795212256,
+     "nombre": "pantalon",
+     "descripcion": "de algodon",
+     "talle": "xxl",
+     "precio": "5400",
+     "categoria": "oferta",
+     "imagen": "imagenProducto"
+    },
+    {
+     "id": 1667795295492,
+     "nombre": "pantalon",
+     "descripcion": "de algodon",
+     "talle": "xxs",
+     "precio": "5400",
+     "categoria": "oferta",
+     "imagen": "imagenProducto"
+    },
+    {
+     "id": 1667795406833,
+     "nombre": "Lucas Gonzalo",
+     "descripcion": "dfgdfsdfsd",
+     "talle": "l",
+     "precio": "1000",
+     "categoria": "precio de lista",
+     "imagen": "imagenProducto"
+    },
+    {
+     "id": 1667795661611,
+     "nombre": "Lucas Gonzalo",
+     "descripcion": "dfgdfsdfsd",
+     "talle": "l",
+     "precio": "1000",
+     "categoria": "precio de lista",
+     "imagen": "166779566159620220705_114402.jpg"
     }
    ]

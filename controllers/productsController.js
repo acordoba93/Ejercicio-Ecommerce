@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const multer = require("multer");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -21,16 +22,11 @@ const controller = {
     res.render("FormCrearProducto");
   },
   store: (req, res) => {
-
-    console.log("//////////////");
-    console.log(req.body);
-    console.log("///////////////");
-
     const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
     const productoNuevo = {
       id: Date.now(),
-      nombre: req.body.name,
+      nombre: req.body.nombre,
       descripcion: req.body.descripcion,
       talle: req.body.talle,
       precio: req.body.precio,
