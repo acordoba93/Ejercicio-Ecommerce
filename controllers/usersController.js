@@ -72,10 +72,22 @@ const usersController = {
     const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
     const resultValidation = validationResult(req);
+  ;
 
   if(resultValidation.isEmpty()){
+    let userInDB = user.findByField('email', req.body.email)
 
-  const userNuevo = {
+    if(userInDB) {
+      return res.render("Register", {
+        errors: {
+          email: {
+            msg: 'Este email ya está registrado'
+        }
+      },
+      oldData: req.body
+    });
+  }else{
+    const userNuevo = {
     id: Date.now(),
     nombre: req.body.nombre,
     nacimiento: req.body.nacimiento,
@@ -87,6 +99,7 @@ const usersController = {
     repetir: bcryptjs.hashSync(req.body.repetir, 10),
     imagen: req.file ? req.file.filename : "baner-ova.jpg"
     }
+  }
 
 users.push(userNuevo);
 

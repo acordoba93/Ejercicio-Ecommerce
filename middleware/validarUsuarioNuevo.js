@@ -1,4 +1,4 @@
-const { body } = require("express-validator");
+const { body, check } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 const validarUsuarioNuevo = [
@@ -9,7 +9,16 @@ const validarUsuarioNuevo = [
     body("email").notEmpty().withMessage("debe colocar una direccion de correo"),
     body("usuario").notEmpty().withMessage("debe tener un usuario"),
     body("password").notEmpty().withMessage("debe tener una contraseña"),
-    body("repetir").notEmpty().withMessage("debe repetir la contraseña creada")
+    body("repetir").notEmpty().withMessage("debe repetir la contraseña creada"),
+    check("repetir").custom(async(repetir, {req}) =>{
+        const password = req.body.password
+
+        if(password !== repetir){
+            throw new Error("la contraseña no coincide")
+        }
+    })
+
+
 ]
 
 //let contrasenaUno = bcryptjs.hash(req.body.password, 10);
