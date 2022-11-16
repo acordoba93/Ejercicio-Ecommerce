@@ -12,4 +12,22 @@ const validarUsuarioNuevo = [
     body("repetir").notEmpty().withMessage("debe repetir la contraseña creada")
 ]
 
+//let contrasenaUno = bcryptjs.hash(req.body.password, 10);
+//console.log(body{"password"});
+//let contrasenaDos = bcryptjs.hash(req.body.repetir, 10);
+//console.log(contrasenaDos);
+
+//if(contrasenaUno != contrasenaDos){
+//   return res.render('Register', {
+// 				errors: {
+// 					repetir: {
+// 						msg: "las contraseñas deben ser iguales"
+// 					}
+// 				},
+
+// 			});
+// 		};
+
+// ;
+
 module.exports = validarUsuarioNuevo;

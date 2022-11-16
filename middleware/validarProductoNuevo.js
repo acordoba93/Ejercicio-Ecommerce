@@ -21,5 +21,3 @@ const validaciones = [
 
 
 module.exports = validaciones;
-
-
