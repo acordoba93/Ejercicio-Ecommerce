@@ -52,5 +52,5 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false
     });
    }
-  return Productos  
+  return Producto  
 }
