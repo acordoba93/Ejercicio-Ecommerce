@@ -1,47 +1,71 @@
-* {
+    * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: white;
     }
+
+    body{
+        background-image: url("../images/baner-ova.jpg");
+        background-size: 100% 100%;
+        color: black;
+    }
+
     header img {
         width: 50%;
     }
-    .formu-datos {
-        /*max-width: 60%;*/
-        width: 100%;
-        border: 3px solid black;
-        margin: 30px 2px;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        background-image: url("../images/baner-ova.jpg");
-        }
+        
+    input,select{
+        display: block;
+        font-size: 15px;
+        color: black;
+        background-color: white;
+        width: 30%;
+        padding: 10px 20px;
+        /* box-shadow: 2px 2px 5px #000000; */
+        border-radius: 5%;
+        margin-left: 10px;
+    }
+
+    .DatoRegistro{
+        margin: 10px;
+    }
+
+    .hiper{
+        text-decoration: none;
+        color: white;
+        font-size: 30px;
+    }
+    
+    .hiper:hover{
+        cursor: hand;
+        text-decoration: underline;
+    }
+
+    .CuentaExiste{
+        color: white;
+        font-size: 30px;
+        margin: 15px 30px;
+    }
+    
+
     h2 {
+        color: white;
         font-size: 100px;
         font-family: 'Roboto', sans-serif;
         font-family: 'Courier New', Courier, monospace;
         display: flex;
         justify-content: center;
     }
-    p {
-        font-size: 30px;
-        padding: 10px 10px;
-    }
-    .dato {
-        display: block;
-        font-size: 30px;
-        color: white;
-        background-color: #1A1818;
+    
+    .text-danger{
+        color: red;
+        background-color: white;
+        font-size: 15px;
         width: 30%;
-        padding: 10px 20px;
-        box-shadow: 2px 2px 5px #000000;
-        border-radius: 5%;
         margin-left: 10px;
+        text-transform: uppercase;
     }
-    .formu-datos input{
-        font-size: 20px;
-    }
+    
     .dato-numero {
         display: block;
         font-size: 30px;
@@ -53,49 +77,34 @@
         border-radius: 5%;
         margin-left: 10px;
     }
-    .dato-genero {
-        font-size: 25px;
-        padding: 10px 20px;
-        margin-left: 10px;
-        box-shadow: 2px 2px 5px #000000;
-        border-radius: 5%;
-        margin-left: 10px;
-        }
-    .formu-datos input {
-        width: 30%;
-        border: 1.5px solid grey;
-        padding: 10px 20px;
-        margin: 10px 150px ;
-        border-radius: 4px;
-    }
+    
     .botones {
         border-radius: 5px;
-        color: rgb(240, 248, 245);
-        width: 120px;
-        font-size: 20px;
+        color: black;
+        width: 150px;
+        font-size: 30px;
         margin: 15px 30px;
-        background-color: rgb(10, 10, 10);
+        background-color: white;
         border: none;
         display: inline-block;
     }
+
     .botones:hover{
         background-color: rgb(50, 50, 53);
     }
+
     .banner {
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
-    div .foto-formu {
-        width: 15%;
-        margin: 5px 10px;
-        border-radius: 5%;
-     }
-     .botonera {
+
+    .botonera {
         display: flex;
         align-items: flex-end;
-     }
-     footer {
+    }
+
+    footer {
         background-color: white;
         padding-bottom: 10px;
     }
@@ -107,6 +116,7 @@
         justify-content: center;
         padding-bottom: 10px;
     }
+
     .footer-items div {
         flex-direction: row;
         margin: 10px 10px;
@@ -114,23 +124,105 @@
         justify-content: center;
         width: 100%;
     }
+
     .end-footer {
         display: block;
     }
+
     .footer-items i {
         font-size: 30px;
         color: #1259C3;
         padding-bottom: 4px;
         transition: transform .3s ease-in-out;
     }
+
     .footer-items i:hover {
         color: #39B54A;
     }
-    .hiper {
-        font-size: 20px;
-        color:rgb(30, 9, 77);
-        padding-bottom: 15px;
-        display: flex;
-        text-align: center;
+
+    /* @media (min-width: 361px){
+        main section article .description{
+            margin: auto
+        }
+    
+        main section div.products{
+            /* width: 45%; 
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .top-header{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            align-items: center;
+            /* margin: auto; 
+        }
+    
+        main section div.products article {
+            width: 45%;
+        }
+    
+        main section div.products article:hover{
+            box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        }
+    
+        main section div.products article:hover .description{
+            /* opacity: 1; 
+            display: block
+        }; 
     }
 
+    @media (min-width: 769px){
+        main section div.products article{
+            width: auto;
+        }
+    
+        div.burger-menu {
+            display: none;
+        }
+    
+        .contenedor-nav {
+            display: flex;
+            height: 40px;
+            text-align: center;
+        }
+    
+        .top-header {
+            flex-wrap: nowrap;
+        }
+    
+        header p {
+            text-align: right;
+            align-content: flex-end;
+        }
+    
+        .footer-items div {
+            width: 30%;
+        }
+    } */
+
+    /* Recuperar contraseña */
+
+    .formu-datos {
+        width: 100%;
+        margin: 30px 2px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dato{
+        display: block;
+        font-size: 30px;
+        color: white;
+        background-color: #1A1818;
+        width: 30%;
+        padding: 10px 20px;
+        box-shadow: 2px 2px 5px #000000;
+        border-radius: 5%;
+        margin-left: 10px;
+    }

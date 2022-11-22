@@ -410,49 +410,42 @@ footer {
     }
 }
 
-
-/* CSS Crear producto */
-
-.product-data {
+/* Vista crear producto */
+.products-title{
+    font-size: 30px;
     margin: 10px;
-    color: white;
-    font-size: 20px;
-    display: grid;
+    text-align: center;
 }
 
-.container-products-wrapper{
-    background-color: black;
-    display: flex;
-    align-items:initial;
-    justify-content: left;
-    flex-direction: row;
+.product-data{
+    display: block;
+    font-size: 30px;
+    color: black;
+    width: 30%;
+    padding: 10px 20px;
+    border-radius: 5%;
+    margin-left: 10px;
 }
 
-.buy-now-button {
-    font-size: 20px;
-    color: white;
-    background-color: #04AA6D;
-    padding-bottom: 4px;
-    transition: transform .3s ease-in-out;
-}
-
-.buy-now-button:hover {
-    color: white;
-    background-color: #46a049
+input,select{
+    display: block;
+    font-size: 15px;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5%;
 }
 
 .button-create{
-    justify-content: center;
-    display: flex;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+    margin: 15px 30px;
+    background-color: black;
+    border: none;
+    display: inline-block;
 }
 
-.image{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.image img{
-    height: 100px;
-    width: 100px;
+.button-create:hover{
+    background-color: #39b54a;
+    transition-delay: 0.5s;
 }

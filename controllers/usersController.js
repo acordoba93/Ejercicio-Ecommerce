@@ -136,7 +136,7 @@ res.redirect("/users");
       const data = JSON.stringify(users, null, " ");
       fs.writeFileSync(usersFilePath, data);
   
-      res.redirect("/users/detail/" + req.params.id)
+      res.redirect("/userProfile" + req.params.id)
     },
     
   destroy: (req, res) => {

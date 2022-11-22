@@ -17,41 +17,38 @@
         <div>
             <div class="form"> 
                 <form action="/users/Login" method="POST"> 
-                <input 
-                type="text" 
-                name="email" 
-                placeholder="Correo Electronico" 
-                value="<%= locals.oldData ? oldData.email : null %>"
-                >
-
-                 <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger">
-                       <%= errors.email.msg %> 
-                    </div>
-                 <% } %>
-                <input 
-                type="password" 
-                name= password 
-                placeholder="Contraseña">
-                <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
-                       <%= errors.password.msg %> 
-                    </div>
-                 <% } %>
-                <button type="submit" name="entrar">ENTRAR</button>
-            </form>
-                <form action="/users/recuperarPassword" method="GET"></form>
-
-                <a href="/users/RecuperarPassword">¿Has olvidado tu contraseña?</a>
-                <hr>
-            <div>
-                <form action="/users/Register" method="GET">
-                    <button class="NuevaC" type="submit" name="Crear Nueva Cuenta">Crear Nueva Cuenta
-                    </button>
+                    <input 
+                        type="text" 
+                        name="email" 
+                        placeholder="Correo Electronico" 
+                        value="<%= locals.oldData ? oldData.email : null %>"
+                    >
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                    <% } %>
+                    <input 
+                        type="password" 
+                        name= password 
+                        placeholder="Contraseña">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                        <%= errors.password.msg %> 
+                        </div>
+                    <% } %>
+                    <button class="BtnSubmit" type="submit" name="entrar">ENTRAR</button>
                 </form>
-            </div>                                                       
-        </div>
-
+                <form action="/users/recuperarPassword" method="GET">
+                        <a href="/users/RecuperarPassword">¿Has olvidado tu contraseña?</a>
+                </form>
+                <div>
+                    <form action="/users/Register" method="GET">
+                        <button class="NuevaC" type="submit" name="Crear Nueva Cuenta">Crear Nueva Cuenta
+                        </button>
+                    </form>
+                </div>                                                       
+            </div>
         </div>
     </div>
     <%- include("partials/footer") %>

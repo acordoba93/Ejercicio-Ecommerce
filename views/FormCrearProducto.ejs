@@ -31,7 +31,7 @@
 
 				</ol>
 				<form action="/products/create" method="POST" enctype="multipart/form-data">
-					<div class="row product-detail">
+					<div class="DatoRegistro">
 						<div class="product-data">
 							<label for="Nombre" class="form-label">Nombre del Producto:</label>
 							<input type="text" id="nombre" name="nombre" placeholder="Ej: Remera ReThink" class="form-input">
@@ -58,16 +58,15 @@
 						</div>
 						<div class="product-data"> 							
 							<label for="imagen" class="form-label">Imagen del Producto</label>
-							<input type="file" id="imagen" name="imagenProducto" class="form-input"></div>
-						<div class="button-create">
-							<button type="submit" class="buy-now-button">Crear Producto</button>
+							<input type="file" id="imagen" name="imagenProducto" class="form-input">
 						</div>
 					</div>
+					<div>
+						<button class="button-create" type="submit" class="buy-now-button">Crear Producto</button>
+					</div>
+					
 				</form>
 			</div>
-		</div>
-		<div class="image">
-			<img src="../public/images/ova-logo.jpg" alt="logotipo">
 		</div>
 	</div>
     <%- include("partials/footer") %>
