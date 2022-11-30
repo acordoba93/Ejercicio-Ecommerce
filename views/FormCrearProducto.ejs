@@ -20,9 +20,11 @@
 			</div>
 			<div class="col-12">
 				<ol>
-					<% if(locals.errores) { %>
-						<% for(let error of errores) { %>
-							<li> <% error.msg %></li>
+					<% if(locals.errors) { %>
+						<h2>errores</h2>
+						<% for(let error in errors) { %>
+							<li><%= errors[error].msg %></li>
+							<%= console.log(errors) %>
 
 
 					<% } %>
@@ -34,7 +36,19 @@
 					<div class="DatoRegistro">
 						<div class="product-data">
 							<label for="Nombre" class="form-label">Nombre del Producto:</label>
-							<input type="text" id="nombre" name="nombre" placeholder="Ej: Remera ReThink" class="form-input">
+							<input 
+							type="text" 
+							id="nombre" 
+							name="nombre" 
+							placeholder="Ej: Remera ReThink" 
+							class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                        	value="<%= locals.oldData ? oldData.nombre : null %>"
+                     	>
+                     <% if (locals.errors && errors.nombre) { %>
+                        <div class="text-danger">
+                           <%= errors.nombre.msg %> 
+                        </div>
+                     <% } %>
 						</div>
 						<div class="product-data">
 							<label for="descripcion" class="form-label">Descripción del Producto:</label>
@@ -42,7 +56,16 @@
 						</div>
 						<div class="product-data">
 							<label for="talle" class="form-label">Talle Disponible:</label>
-							<input type="text" id="Talle" name="talle" placeholder="Ej: L" class="form-input">
+							<input 
+							type="text" 
+							id="Talle" 
+							name="talle" 
+							placeholder="Ej: L" 
+							class="form-select"
+							<% 
+                     let talles = ["XL", "L", "M", "S"];
+					 		%>
+                  <% for (const talle of talles) { %>
 						</div>
 						<div class="product-data">
 							<label for="precio" class="form-label">Precio del Producto:</label>
@@ -51,6 +74,10 @@
 						<div class="product-data">
 							<label for="category" class="form-label">Categoría:</label>
 							<select name="categoria" id="category" class="form-input">
+								
+
+								
+
 								<option value="">Elegí</option>
 								<option value="oferta">En oferta</option>
 								<option value="precio de lista">Precio de Lista</option>

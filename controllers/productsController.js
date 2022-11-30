@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
@@ -24,6 +25,9 @@ const controller = {
   store: (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
+    const resultValidation = validationResult(req);
+  if(resultValidation.isEmpty()){
+    
     const productoNuevo = {
       id: Date.now(),
       nombre: req.body.nombre,
@@ -43,6 +47,12 @@ const controller = {
     fs.writeFileSync(productsFilePath, data);
 
     res.redirect("/products");
+  }else{
+  return res.render('FormCrearProducto', {
+    errors: resultValidation.mapped(),
+    oldData: req.body
+  })
+}
 
   },
   edit: (req, res) => {

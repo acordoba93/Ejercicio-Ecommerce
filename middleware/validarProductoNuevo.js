@@ -7,6 +7,7 @@ const validaciones = [
     .isLength({max:15}).withMessage("debe tener como maximo 15 letras"),
     
     body("descripcion").isEmpty().withMessage("debe tener una descripcion").bail()
+    .isLength({min:20}).withMessage("debe tener por lo menos 20 letras").bail()
     .isString().withMessage("debe ser solo letras"),
 
     body("talle").isEmpty().withMessage("debe seleccionar un talle").bail()
