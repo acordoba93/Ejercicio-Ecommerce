@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "Ova-Flowers_db",
+    "database": "ova-flowers_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

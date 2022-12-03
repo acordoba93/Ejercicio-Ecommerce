@@ -1,6 +1,6 @@
 //TABLA USUARIOS//
 module.exports = (sequelize, dataTypes) => {
-  const alias = "Users";
+  const alias = "Usuarios";
 
   const cols = {
     Id: {
@@ -38,18 +38,18 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName :"Usuarios",
+    tableName :"users",
     timestamps : false
   };
 
 
-  const Users = sequelize.define(alias,cols,config);
+  const users = sequelize.define(alias,cols,config);
 
-  Users.associate = function(models) {
-    Users.hasMany(models.ProductoFinal, {
+  users.associate = function(models) {
+    users.hasMany(models.product_final, {
       as: "usuario-producto",
       foreignKey: "ProductoFinal-Id"
     })
   }
-  return Users  
+  return users  
 }

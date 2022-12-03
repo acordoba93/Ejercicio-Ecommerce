@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName :"ProductsCategories",
+    tableName :"product_category",
     timestamps : false
   };
 
@@ -37,5 +37,5 @@ module.exports = (sequelize, dataTypes) => {
 
  
 
-  return ProdutoCategorias  
+  return product_category  
 }

@@ -36,21 +36,21 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName :"Products",
+    tableName :"products",
     timestamps : false
   };
 
 
-  const Producto= sequelize.define(alias,cols,config);
+  const products= sequelize.define(alias,cols,config);
 
-  Producto.associate = function (models) {
-    Producto.belongsToMany(models.Cayegoria, {
-      as: "ProductoCategoria",
-      through: "ProductoCategoria",
+  products.associate = function (models) {
+    products.belongsToMany(models.categories, {
+      as: "product_category",
+      through: "product_category",
       foreignKey: "Productos-Id",
       otherKey: "Categorias-Id",
       timestamps: false
     });
    }
-  return Producto  
+  return products  
 }

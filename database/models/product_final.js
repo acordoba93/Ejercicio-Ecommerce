@@ -1,6 +1,6 @@
 //TABLA PRODUCTOS-COLORES Y TALLES--T.PIVOT//
 module.exports = (sequelize, dataTypes) => {
-  const alias = "ProdutosCyT";
+  const alias = "ProductoFinal";
 
   const cols = {
     Id: {
@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName :"ProductsCyT",
+    tableName :"product_final",
     timestamps : false
   };
 
@@ -38,4 +38,4 @@ module.exports = (sequelize, dataTypes) => {
   const ProductosCyT = sequelize.define(alias,cols,config);
 
   }
-  return ProductosCyT    
+  return product_final    
