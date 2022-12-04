@@ -5,6 +5,8 @@ const app = express();
 const path = require('path');
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
+const apiProductsRoutes = require("./routes/api/productsRoutes");
+const apiProductsUsers = require("./routes/api/usersRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const methodOverride = require("method-override");
 const session = require('express-session');
@@ -28,6 +30,8 @@ app.use(methodOverride("_method"));
 app.use('/', mainRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", usersRoutes);
+app.use("/api/products/", apiProductsRoutes);
+app.use("/api/users/", apiProductsUsers);
 
 
 app.use(cookies());
