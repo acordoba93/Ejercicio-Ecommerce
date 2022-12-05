@@ -10,13 +10,13 @@ const validaciones = [
     .isLength({min:20}).withMessage("debe tener por lo menos 20 letras").bail()
     .isString().withMessage("debe ser solo letras"),
 
-    body("talle").isEmpty().withMessage("debe seleccionar un talle").bail()
+    body("talle").notEmpty().withMessage("debe seleccionar un talle").bail()
     .isLength({max:3}).withMessage("maximo 3 letras"),
 
     body("precio").isEmpty().withMessage("el nuevo producto debe tener un precio").bail()
     .isNumeric().withMessage("el precio debe ser un valor numerico"),
 
-    body("categoria").isEmpty().withMessage("el nuevo producto debe estar en una de las 2 categorías").bail()
+    body("categoria").notEmpty().withMessage("el nuevo producto debe estar en una de las 2 categorías").bail()
    
 ];
 

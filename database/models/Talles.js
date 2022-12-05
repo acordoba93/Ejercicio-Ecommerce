@@ -1,6 +1,6 @@
-//TABLA COLORES //
+//TABLA TALLES //
 module.exports = (sequelize, dataTypes) => {
-  const alias = "colores";
+  const alias = "Talles";
 
   const cols = {
     Id: {
@@ -9,14 +9,10 @@ module.exports = (sequelize, dataTypes) => {
       autoIncrement : true
 
     },
-    coloresPrimarios: {
+    Talle: {
       type: dataTypes.STRING
         
-    },
-    coloresSecundarios: {
-      type: dataTypes.STRING
-        
-    },
+    },      
     IdProductosCategoria: {
       type: dataTypes.INTEGER,
       foreignKey: true,
@@ -26,22 +22,23 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName :"colors",
+    tableName :"Sizes",
     timestamps : false
   };
 
 
-  const colors = sequelize.define(alias,cols,config);
+  const Talles = sequelize.define(alias,cols,config);
 
-  colors.associate = function (models) {
-    colors.belongsToMany(models.Producto, {
-      as: "product_final",
-      through: "product_final",
-      foreignKey: "Colores-Id",
+  Talles.associate = function (models) {
+    Talles.belongsToMany(models.Producto, {
+      as: "ProductoFinal",
+      through: "ProductoFinal",
+      foreignKey: "Talle-Id",
       otherKey: "ProductoCategoria-Id",
-      otherKey: "Talle-Id",
+      otherKey: "Colores-Id",
       timestamps: false
     });
    }
-  return colors 
+
+  return Talles 
 }
