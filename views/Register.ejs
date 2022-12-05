@@ -19,12 +19,14 @@
     <h2>
        Registrate 
     </h2>
+    <ul class="errores"></ul>
     </div>    
-         <form action="/users/register" method="POST" enctype="multipart/form-data">
+         <form action="/users/register" method="POST" class="formRegister" enctype="multipart/form-data">
             <div class="DatoRegistro">
                <div class="form-group">
                   <label class="dato-numero">NOMBRE COMPLETO</label>
-                     <input id="ingreso-nombre"
+                     <input 
+                        id="nombre"
                         type="text" 
                         name="nombre" 
                         class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
@@ -41,7 +43,7 @@
                <label class="dato-numero" for="Fecha de Nacimiento">FECHA DE NACIMIENTO</label>
                   <input 
                      type="date" 
-                     name="nacimiento"  
+                     name="nacimiento" 
                      min="1900-01-01" 
                      max="2100-01-01"
                      value="<%= locals.oldData && oldData.nacimiento ? oldData.nacimiento : '' %>"
@@ -56,7 +58,8 @@
                <div class="form-group">
                   <label class="dato-numero">PAIS DE NACIMIENTO</label>
                      <select 
-                        name="pais" 
+                        name="pais"
+                        id="pais"
                         class="form-select <%= locals.errors && errors.pais ? 'is-invalid' : null %>"
                      >
                   <option value="">Elegí un país</option>
@@ -110,7 +113,7 @@
                <input 
                   type="text" 
                   name="usuario" 
-                  id="Usuario" 
+                  id="usuario" 
                   value="<%= locals.oldData ? oldData.usuario : null %>"
                >
              <% if (locals.errors && errors.usuario) { %>
@@ -124,7 +127,7 @@
                   <input 
                      type="password" 
                      name="password" 
-                     id="Contraseña" 
+                     id="contrasena" 
                      value="<%= locals.oldData ? oldData.password : null %>"
                   >
                   <% if (locals.errors && errors.password) { %>
@@ -138,7 +141,7 @@
                   <input 
                      type="password" 
                      name="repetir" 
-                     id="repetir Contraseña" 
+                     id="repetir" 
                      value="<%= locals.oldData ? oldData.repetir : null %>"
                   >
                   <% if (locals.errors && errors.repetir) { %>
