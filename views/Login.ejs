@@ -10,15 +10,19 @@
     <title>OvaFlowers Login</title>
 </head>
 <body>
+
     <div class="container">
         <div class="textos">
             <h2>Clothes</h2>
+        <ul class="erroresLogin"></ul>
         </div>
         <div>
             <div class="form">
                 <form action="/users/Login" method="POST">
                 <input
-                type="text"
+                type="email"
+                id="emailLogin"
+                class="input"
                 name="email"
                 placeholder="Correo Electronico"
                 value="<%= locals.oldData ? oldData.email : null %>"
@@ -31,6 +35,8 @@
                 <input
                 type="password"
                 name= password
+                id="passwordLogin"
+                class="input"
                 placeholder="Contraseña">
                 <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">
@@ -54,6 +60,8 @@
         </div>
         </div>
     </div>
+    <script src="/js/login.js"></script>
+
     <%- include("partials/footer") %>
 </body>
 </html>
