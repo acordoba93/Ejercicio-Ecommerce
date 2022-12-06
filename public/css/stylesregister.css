@@ -4,6 +4,10 @@
     box-sizing: border-box;
     }
 
+    li{
+        color:red;
+    }
+
     body{
         background-image: url("../images/baner-ova.jpg");
         background-size: 100% 100%;
