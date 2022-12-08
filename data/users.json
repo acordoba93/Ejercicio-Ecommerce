@@ -70,5 +70,17 @@
   "password": "$2a$10$8bpz89jgXGtvgw6GsdBEuO8aQQXdtjqBvck/r5/sZ/WApjT1YV8nW",
   "repetir": "$2a$10$0DRLHYSwsg2WOcM5eAvDMu/UCASfx5.2Yr6XKjKpkHQZAbtqDilkm",
   "imagen": "user.imagen1670507663915.jpg"
+ },
+ {
+  "id": 1670535394447,
+  "nombre": "Susana Gimenez",
+  "nacimiento": "1900-01-15",
+  "pais": "Paraguay",
+  "celular": "1522225266",
+  "email": "su@dh.com",
+  "usuario": "su2022",
+  "password": "$2a$10$xeBAAxuMSYkPwzXeGkT6Kuzr9lZGA82VBcpIou7RlIiLBOMmu7eyu",
+  "repetir": "$2a$10$jOiIPIgKfRCAeO3X/YXro.SA4FFjeDM.Pk4nq1zag8BG3Efsw5ywy",
+  "imagen": "user.imagen1670535394428.jpg"
  }
 ]
