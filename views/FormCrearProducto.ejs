@@ -50,7 +50,7 @@
 						<div class="product-data">
 							<label for="talle" class="form-label">Talle Disponible:</label>
 								<select 
-									name="Talle"
+									name="talle"
 									id="talle"
 									class="form-select <%= locals.errors && errors.talle ? 'is-invalid' : null %>"
 						 		>
@@ -106,7 +106,7 @@
 						</div>
 						<div class="product-data"> 							
 							<label for="imagen" class="form-label">Imagen del Producto</label>
-							<input type="file" id="imagen" name="imagenProducto" class="form-input">
+							<input type="file" id="imagenProducto" name="imagenProducto" class="form-input">
 							<% if (locals.errors && errors.imagen) { %>
 								<div class="text-danger">
 								   <%= errors.imagen.msg %> 
@@ -122,8 +122,6 @@
 			</div>
 		</div>
 	</div>
-
-	<script src="/js/formCrearProducto.js"></script>
 	
     <%- include("partials/footer") %>
 </body>

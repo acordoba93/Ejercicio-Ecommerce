@@ -60,14 +60,14 @@ header .logo .form{
 }
 
 .product-box_image{
-    height: 200px;
-    width: auto;
+    height: 100px;
+    width: flex;
     display: flex;
     margin: 10px;
 }
 
 .product-box_image img{
-    width: 200px
+    width: 100px;
 }
 
 .last-visit{

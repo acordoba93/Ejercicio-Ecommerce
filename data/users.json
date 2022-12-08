@@ -1,26 +1,74 @@
 [
  {
-  "id": 1668298579765,
-  "nombre": "luis",
-  "nacimiento": "2022-11-08",
+  "id": 1670507255946,
+  "nombre": "Lucas Garcia",
+  "nacimiento": "2022-02-08",
   "pais": "Argentina",
-  "celular": "123456",
-  "email": "florsoto662@gmail.com",
-  "usuario": "10081028",
-  "password": "$2a$10$RqdFOWZ.OsH1LHwcZiLFnO8Zb4lz4oVdtI6.i5SGhYwa0vO7vxpiy",
-  "repetir": "$2a$10$PXULsHeG18CYggK.It0wwOC6Kk8uyhWlJLljBnbPk5p5KEUk4YEbK",
-  "imagen": "user.imagen1668298579750.jpg"
+  "celular": "3513982000",
+  "email": "lucasgarciacab@hotmail.com",
+  "usuario": "lux2016",
+  "password": "$2a$10$a6XLvhkNt8fOiKLl9u7Lau9BFbb55Ifj9R1mIlL6WwxkfekDHevFi",
+  "repetir": "$2a$10$MZ919yqo.SLiAn.7aA.Wuu6iPHDFfacrobuCQtNvY4KSHieszP6fO",
+  "imagen": "user.imagen1670507255928.jpg"
  },
  {
-  "id": 1668565924583,
-  "nombre": "Lucas Gonzalo",
-  "nacimiento": "2022-11-14",
-  "pais": "Argentina",
-  "celular": "131321321",
-  "email": "lucasgarciacab@hotmail.com",
-  "usuario": "lux",
-  "password": "$2a$10$O5Ssx32TeZoXOldW2FCHTOkAC0wmOv0bvs4.BO.m1d29/6VwPpPbO",
-  "repetir": "$2a$10$Itpvslm6NCN4H4exOmfPRud303TdNA7poHPCKX.yJFKccqYyBHlhe",
-  "imagen": "baner-ova.jpg"
+  "id": 1670507342001,
+  "nombre": "Emilio Cortez",
+  "nacimiento": "1984-04-28",
+  "pais": "Ecuador",
+  "celular": "11524221663",
+  "email": "emilio@dh.com",
+  "usuario": "emilio2022",
+  "password": "$2a$10$xOink5P2OFUkjWiXm.2sieAqrQWkyanFswZsHb3H9jweNkiK7m53u",
+  "repetir": "$2a$10$QRGB34zkM4i9RXysjOXASutsoENETZy4gBsOgQVHqHRzIYbCZeYNu",
+  "imagen": "user.imagen1670507341990.jpg"
+ },
+ {
+  "id": 1670507421578,
+  "nombre": "Juan Lopez",
+  "nacimiento": "1980-01-16",
+  "pais": "Venezuela",
+  "celular": "2523152666",
+  "email": "juan@dh.com",
+  "usuario": "juan2022",
+  "password": "$2a$10$PouTgm6tM/e4HzvAZb5hX.WZOYyVoAQarJmScM39d89DwfY7GuDyO",
+  "repetir": "$2a$10$7K4OC1bRFG.87eCWiMiUG.eh6/UfPorgYbj6wqKPwqyY9KL15wP/K",
+  "imagen": "user.imagen1670507421567.jpg"
+ },
+ {
+  "id": 1670507506912,
+  "nombre": "Andres Cordoba",
+  "nacimiento": "1981-02-01",
+  "pais": "Colombia",
+  "celular": "5212336522",
+  "email": "andres@dh.com",
+  "usuario": "andres2022",
+  "password": "$2a$10$Ik1q1gS2ceSkE2KYf5CpMOnSmR8rpmQ7vqR5J0g3qSkspXPppxJqS",
+  "repetir": "$2a$10$xVLA/TWDKBflvaqOifqp0egB0ImqHfKYllb/zpT4J2p.SJZKVMQ5a",
+  "imagen": "user.imagen1670507506903.jpg"
+ },
+ {
+  "id": 1670507599243,
+  "nombre": "Florencia Soto",
+  "nacimiento": "1988-12-25",
+  "pais": "Paraguay",
+  "celular": "12233399",
+  "email": "florsoto662@gmail.com",
+  "usuario": "florencia2022",
+  "password": "$2a$10$cX5Cn8yw6/QRx0w8vQlRSOQy6EqUBlDmtVdXAuGS9Bd1zfIpYagWG",
+  "repetir": "$2a$10$e0nVun3Ur.eEfKZzvowXV.IwDM/jGPupAN7jQaeotMpwgWik/WCFG",
+  "imagen": "user.imagen1670507599239.jpg"
+ },
+ {
+  "id": 1670507663924,
+  "nombre": "ANA",
+  "nacimiento": "2001-01-15",
+  "pais": "Ecuador",
+  "celular": "54221224455",
+  "email": "belensoto_26@hotmail.com",
+  "usuario": "anabelen2022",
+  "password": "$2a$10$8bpz89jgXGtvgw6GsdBEuO8aQQXdtjqBvck/r5/sZ/WApjT1YV8nW",
+  "repetir": "$2a$10$0DRLHYSwsg2WOcM5eAvDMu/UCASfx5.2Yr6XKjKpkHQZAbtqDilkm",
+  "imagen": "user.imagen1670507663915.jpg"
  }
 ]

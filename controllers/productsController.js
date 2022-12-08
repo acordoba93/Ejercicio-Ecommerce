@@ -34,12 +34,14 @@ const controller = {
       descripcion: req.body.descripcion,
       talle: req.body.talle,
       precio: req.body.precio,
-      categoria: req.body.categoria,
-      imagen: "ova-logo.jpg"
+      imagenProducto: "ova-logo.jpg",
+      categoria: req.body.categoria
+
     };
     if(req.file){
-      productoNuevo.imagen = req.file.filename
+      productoNuevo.imagenProducto = req.file.filename
     }
+    console.log(productoNuevo);
 
     products.push(productoNuevo)
 
@@ -77,7 +79,7 @@ const controller = {
     const data = JSON.stringify(products, null, " ");
     fs.writeFileSync(productsFilePath, data);
 
-    res.redirect("/products/detalle/" + req.params.id)
+    res.redirect("/products/detail/" + req.params.id)
   },
 
   destroy: (req, res) => {

@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
      let talle = document.querySelector("#talle");
      let precio = document.querySelector("#precio");
      let categoria = document.querySelector("#categoria");
-     let imagen = document.querySelector("#imagen");
+     let imagenProducto = document.querySelector("#imagenProducto");
 
      //-------nombre-----------
      if(nombre.value.trim == ""){
@@ -76,17 +76,17 @@ window.addEventListener("load", () => {
            }else {
             categoria.classList.add("is-valid");
             categoria.classList.remove("is-invalid");
-            formCrearProducto.imagen.focus()
+            formCrearProducto.imagenProducto.focus()
            }      
 
-               //-------imagen-----------
-          if(imagen.value == ""){
+               //-------imagenProducto-----------
+          if(imagenProducto.value == ""){
             errors.push("El campo Imagen del Producto no puede estar vacío");
-            imagen.classList.remove("is-valid");
-            imagen.classList.add("is-invalid");
+            imagenProducto.classList.remove("is-valid");
+            imagenProducto.classList.add("is-invalid");
            }else {
-            imagen.classList.add("is-valid");
-            imagen.classList.remove("is-invalid");
+            imagenProducto.classList.add("is-valid");
+            imagenProducto.classList.remove("is-invalid");
             }
 
             
