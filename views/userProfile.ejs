@@ -12,13 +12,19 @@
 
 
 			<div>
-				<h2>Bienvenido <%= user.nombre %> </h2>
-				<img src="/images/usuarios/<%= user.imagen %> ">
+				<h2>Bienvenido <%= usuario.nombre %> </h2>
+				<img src="/images/usuarios/<%= usuario.imagen %> ">
 				<br>
 				<br>
-				<div><%= user.email %> </div>
+				<div><%= usuario.email %> </div>
 			</div>
-		</div>
+			<div class="button-options">
+				<a href="/carrito" class="cart-btn">Añadir al carrito</a>
+				<form action="/users/delete/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+				  <button type="submit" class="action-button-delete">Eliminar Usuario</button>
+				</form>
+				<a href="/users/edit/<%= usuario.id %>" class="action-button-edit">Editar Usuario</a>
+			  </div>
 
 
   <%- include("partials/footer") %>

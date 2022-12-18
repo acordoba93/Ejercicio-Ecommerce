@@ -14,15 +14,10 @@ window.addEventListener("load", () => {
      let talle = document.querySelector("#talle");
      let precio = document.querySelector("#precio");
      let categoria = document.querySelector("#categoria");
-     let imagenProducto = document.querySelector("#imagenProducto");
 
-     //-------nombre-----------
-     if(nombre.value.trim == ""){
+     //-------Nombre del Producto-----------
+     if(nombre.value == ""){
         errors.push("El campo Nombre del Producto no puede estar vacío");
-        nombre.classList.remove("is-valid");
-        nombre.classList.add("is-invalid");
-     }else if(productName.value.length < 5) {
-        errors.push("El campo Nombre del Producto debe tener al menos 5 caracteres");
         nombre.classList.remove("is-valid");
         nombre.classList.add("is-invalid");
      }else {
@@ -31,13 +26,9 @@ window.addEventListener("load", () => {
       formCrearProducto.descripcion.focus()
      }
 
-     //-------descripcion-----------
+     //-------Descripción del Producto-----------
      if(descripcion.value == ""){
-      errors.push("El campo Descripción no puede estar vacío");
-      descripcion.classList.remove("is-valid");
-      descripcion.classList.add("is-invalid");
-     }else if(descripcion.value.length < 20) {
-      errors.push("El campo Descripción debe tener al menos 20 caracteres");
+      errors.push("El campo Descripción del Producto no puede estar vacío");
       descripcion.classList.remove("is-valid");
       descripcion.classList.add("is-invalid");
      }else {
@@ -46,7 +37,7 @@ window.addEventListener("load", () => {
       formCrearProducto.talle.focus()
      }
 
-     //-------talle-----------
+     //-------Talle del Producto-----------
      if(talle.value == ""){
         errors.push("El campo Talle del Producto no puede estar vacío");
         talle.classList.remove("is-valid");
@@ -57,7 +48,7 @@ window.addEventListener("load", () => {
          formCrearProducto.precio.focus()
        }   
 
-       //-------precio-----------
+       //-------Precio del Producto-----------
        if(precio.value == ""){
         errors.push("El campo Precio del Producto no puede estar vacío");
         precio.classList.remove("is-valid");
@@ -68,27 +59,15 @@ window.addEventListener("load", () => {
          formCrearProducto.categoria.focus()
        }   
 
-        //-------categoria-----------
+        //-------Categoría del Producto-----------
         if(categoria.value == ""){
-            errors.push("El campo Categoria del Producto no puede estar vacío");
+            errors.push("El campo Categoría del Producto no puede estar vacío");
             categoria.classList.remove("is-valid");
             categoria.classList.add("is-invalid");
            }else {
             categoria.classList.add("is-valid");
             categoria.classList.remove("is-invalid");
-            formCrearProducto.imagenProducto.focus()
            }      
-
-               //-------imagenProducto-----------
-          if(imagenProducto.value == ""){
-            errors.push("El campo Imagen del Producto no puede estar vacío");
-            imagenProducto.classList.remove("is-valid");
-            imagenProducto.classList.add("is-invalid");
-           }else {
-            imagenProducto.classList.add("is-valid");
-            imagenProducto.classList.remove("is-invalid");
-            }
-
             
    //------Controlamos si hay errores------
 

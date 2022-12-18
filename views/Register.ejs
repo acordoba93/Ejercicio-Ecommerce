@@ -44,6 +44,7 @@
                   <input 
                      type="date" 
                      name="nacimiento" 
+                     id="nacimiento"
                      min="1900-01-01" 
                      max="2100-01-01"
                      value="<%= locals.oldData && oldData.nacimiento ? oldData.nacimiento : '' %>"
@@ -81,7 +82,7 @@
                </div>
             </div>
             <div class="DatoRegistro">
-               <label class="dato-numero" for="celular">CELULAR</label>
+               <label class="dato-numero" for="celular">NÚMERO DE CELULAR</label>
                   <input 
                      type="number" 
                      name="celular" 
@@ -95,11 +96,11 @@
                   <% } %>
             </div>
             <div class="DatoRegistro">
-               <label class="dato-numero" for="Email">EMAIL</label>
+               <label class="dato-numero" for="Email">CORREO ELECTRÓNICO</label>
                   <input 
                      type="email" 
                      name="email" 
-                     id="Email" 
+                     id="email" 
                      value="<%= locals.oldData ? oldData.email : null %>"
                   >
                   <% if (locals.errors && errors.email) { %>
@@ -107,20 +108,6 @@
                         <%= errors.email.msg %> 
                      </div>
                   <% } %>
-            </div>
-            <div class="DatoRegistro">
-               <label class="dato-numero" for="Usuario">USUARIO </label>      
-               <input 
-                  type="text" 
-                  name="usuario" 
-                  id="usuario" 
-                  value="<%= locals.oldData ? oldData.usuario : null %>"
-               >
-             <% if (locals.errors && errors.usuario) { %>
-                <div class="text-danger">
-                   <%= errors.usuario.msg %> 
-                </div>
-             <% } %>
             </div>
             <div class="DatoRegistro">
                <label class="dato-numero" for="Contraseña">CONTRASEÑA </label>
@@ -151,7 +138,7 @@
                   <% } %>
             </div>
             <div class="DatoRegistro">
-               <label class="dato-numero" for="foto">FOTO PERFIL </label>
+               <label class="dato-numero" for="foto">FOTO DE PERFIL </label>
                   <input 
                      type="file" 
                      name="imagen" 

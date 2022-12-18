@@ -72,10 +72,9 @@ const usersController = {
     pais: req.body.pais,
     celular: req.body.celular,
     email: req.body.email,
-    usuario: req.body.usuario,
     password: bcryptjs.hashSync(req.body.password, 10),
     repetir: bcryptjs.hashSync(req.body.repetir, 10),
-    imagen: req.file ? req.file.filename : "baner-ova.jpg"
+    imagen: req.file ? req.file.filename : 'ova-logo.jpg',
     }
 users.push(userNuevo);
 const data = JSON.stringify(users, null, " ");
@@ -99,8 +98,6 @@ res.redirect("/users");
         if(p.id == req.params.id){
           p.nombre = req.body.nombre,
           p.email = req.body.email,
-          p.usuario = req.body.usuario,
-          p.genero = req.body.genero,
           p.password = req.body.password
         }
       });

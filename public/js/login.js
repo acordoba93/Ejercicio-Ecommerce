@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
    }
 
      //-------Password-----------
-     if(password.value.trim == ""){
+     if(password.value == ""){
       errors.push("El campo Contraseña no puede estar vacío");
       password.classList.remove("is-valid");
       password.classList.add("is-invalid");

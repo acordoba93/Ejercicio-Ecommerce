@@ -108,12 +108,12 @@
   "categoria": "Precio de lista"
  },
  {
-  "id": 1670535234465,
-  "nombre": "Remera SuperBowl",
-  "descripcion": "Remera edicion especial del super bowl",
-  "talle": "M",
-  "precio": "1560",
-  "imagenProducto": "1670535234455remera-rtk.13.jpg",
+  "id": 1671320330833,
+  "nombre": "Remera azulada",
+  "descripcion": "remera azulada de algodon",
+  "talle": "XL",
+  "precio": "21200",
+  "imagenProducto": "ova-logo.jpg",
   "categoria": "En oferta"
  }
 ]
