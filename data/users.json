@@ -93,16 +93,5 @@
   "password": "$2a$10$/xXjnZNvn2e/fvm96d3ovukGCm5Tq8a.Fd/lRVo8pJdC6k8VewXmi",
   "repetir": "$2a$10$54S4NJ4RxrB/9U9NNPSoNuZwHeyTG7nLfKkRnmkLtfGXH3MnVMgEq",
   "imagen": "ova-logo.jpg"
- },
- {
-  "id": 1671316852009,
-  "nombre": "luciana",
-  "nacimiento": "2022-12-12",
-  "pais": "Uruguay",
-  "celular": "12345678",
-  "email": "luciana@dh.com",
-  "password": "$2a$10$bKix.YYWphUzTFCMG8/5tO.S7oem2H4bjCtzxsixg6cN/..WecJz6",
-  "repetir": "$2a$10$72uL8ml7N9uu/IpJCuEKGuY4aXPEEBAE0JrQMTNy98lnSjzvGeSm.",
-  "imagen": "ova-logo.jpg"
  }
 ]
