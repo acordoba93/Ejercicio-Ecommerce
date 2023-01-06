@@ -1,18 +1,20 @@
+const db = require("../database/models");
 const { validationResult } = require('express-validator');
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+//const productsFilePath = path.join(__dirname, "../data/products.json");
+//const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+//const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-  index: (req, res) => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    res.render("products", { productos: products });
-  },
+  index: async (req, res) => {
+    console.log("pase por aca");
+    let products = await db.Product.findAll()
+      return res.render("products", { productos: [] });
+    },
   detalle: (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     const producto = products.find((p) => p.id == req.params.id);
