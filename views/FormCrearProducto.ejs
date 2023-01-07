@@ -55,14 +55,12 @@
 									class="form-select <%= locals.errors && errors.talle ? 'is-invalid' : null %>"
 						 		>
 					  			<option value="">Elegí tu talle</option>
-					  			<%  
-									let talles = ["XXL","XL", "L", "M", "S","XS"];
-					  			%>
+
 								<% for (const talle of talles) { %>
 									<option 
-										value="<%= talle %>"
+										value="<%= talle.talle_id %>"
 										<%= locals.oldData && (talle === oldData.talle) ? 'selected' : null %> 
-									> <%= talle %> </option>
+									> <%= talle.nombre %> </option>
 								<% } %>
 					  			</select>
 								<% if (locals.errors && errors.talle) { %>

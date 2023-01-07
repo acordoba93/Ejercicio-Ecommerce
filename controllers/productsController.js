@@ -11,46 +11,41 @@ const multer = require("multer");
 
 const controller = {
   index: async (req, res) => {
-    console.log("pase por aca");
     let products = await db.Product.findAll()
-      return res.render("products", { productos: [] });
+      return res.render("products", { products });
     },
-  detalle: (req, res) => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    const producto = products.find((p) => p.id == req.params.id);
-    res.render("ProductDetail", { producto});
+  detalle: async (req, res) => {
+    try {
+      let product = await db.Product.findByPk(req.params.id);
+      res.render("ProductDetail", { product });
+    } catch (error) {
+      console.log({error});
+    }
   },
-  create: function(req, res) {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    res.render("FormCrearProducto");
-  },
+  create: async (req, res) => {
+  
+    let talles = await db.Size.findAll()
+    console.log(talles);
+      return res.render("FormCrearProducto", { talles });
+    },
   store: (req, res) => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
     const resultValidation = validationResult(req);
-  if(resultValidation.isEmpty()){
-    
-    const productoNuevo = {
-      id: Date.now(),
+      if(resultValidation.isEmpty()){
+       console.log(req.body);
+    db.Product.create({
+
+      //product_id: 7,
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
-      talle: req.body.talle,
+      talle_id: req.body.talle,
       precio: req.body.precio,
-      imagenProducto: "ova-logo.jpg",
-      categoria: req.body.categoria
+      categoria_id: 1,
+      imagenProducto: req.file ? req.file.filename : 'ova-logo.jpg',
+      })
+      .then(()=> {
+        return res.redirect('/products')})           
+    .catch(error => res.send(error))
 
-    };
-    if(req.file){
-      productoNuevo.imagenProducto = req.file.filename
-    }
-    console.log(productoNuevo);
-
-    products.push(productoNuevo)
-
-    const data = JSON.stringify(products, null, " ");
-    fs.writeFileSync(productsFilePath, data);
-
-    res.redirect("/products");
   }else{
   return res.render('FormCrearProducto', {
     errors: resultValidation.mapped(),
@@ -59,30 +54,32 @@ const controller = {
 }
 
   },
-  edit: (req, res) => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+  edit: async (req, res) => {
+    try {
+      let productToEdit = await db.Product.findByPk(req.params.id);
+      res.render("FormEditarProducto", { productToEdit });
+    } catch (error) {
+      console.log({error});
+    }
 
-    const producto = products.find((p) => p.id == req.params.id);
-
-    res.render("FormEditarProducto", { productToEdit: producto });
   },
-  update: (req, res) => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
-    products.forEach(p => {
-      if(p.id == req.params.id){
-        p.nombre = req.body.nombre,
-        p.precio = req.body.precio,
-        p.talle = req.body.talle,
-        p.categoria = req.body.categoria,
-        p.descripcion = req.body.descripcion
-      } 
-    });
-    const data = JSON.stringify(products, null, " ");
-    fs.writeFileSync(productsFilePath, data);
-
-    res.redirect("/products/detail/" + req.params.id)
-  },
+  update : (req, res) => {
+        
+    db.Product.update({
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        talle_id: 3,
+        precio: req.body.precio,
+        categoria_id: 2,
+      },
+      {where: {
+        id: req.params.id
+      }}
+)
+.then(()=> {
+    return res.redirect('../products')})       // son dos puntos por que retrocede un slash product     
+.catch(error => res.send(error))
+      },
 
   destroy: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));

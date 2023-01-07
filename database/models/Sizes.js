@@ -19,12 +19,12 @@ module.exports = function(sequelize, dataTypes) {
 
     let Size = sequelize.define(alias, cols, config)
 
-    /*Size.associate = function(models) {
-        Size.hasMany(models.Products, {
-            as: "products",
+    Size.associate = function(models) {
+        Size.hasMany(models.Product ,{
+            as: "Products",
             foreignKey: "talle_id"
         });
-    }*/
+    }
 
     return Size;
 }

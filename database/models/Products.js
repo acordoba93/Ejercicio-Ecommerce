@@ -1,14 +1,15 @@
-"use strict"
 module.exports = function(sequelize, dataTypes) {
-    const Product = sequelize.define(
-        "product",
-        {producto_id: {
+    let alias = "Product";
+
+    let cols = {
+        product_id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        nombre: dataTypes.STRING
-        ,
+        nombre: {
+            type: dataTypes.STRING
+        },
         descripcion: {
             type: dataTypes.STRING
         },
@@ -23,19 +24,25 @@ module.exports = function(sequelize, dataTypes) {
         },
         imagenProducto: {
             type: dataTypes.STRING
-        }},
-        {}
-    )
+        }
+    }
 
-    /*Product.associate = function(models) {
-        Product.BelongsTo(models.Sizes, {
+    let config = {
+        tableName: "Products",
+        timestamps: false
+    }
+
+    let Product = sequelize.define(alias, cols, config)
+    
+    Product.associate = function(models) {
+        Product.belongsTo(models.Size, {
             as: "Sizes",
             foreignKey: "talle_id"
         });
-        //Product.BelongsTo(models.Categories, {
+        Product.belongsTo(models.Category, {
             as: "Categories",
             foreignKey: "categoria_id"
         });
-    }*/
+    }
     return Product;
 }
