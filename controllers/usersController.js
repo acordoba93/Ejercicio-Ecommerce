@@ -1,17 +1,15 @@
+const db = require("../database/models");
 const { validationResult } = require('express-validator');
-const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-const bcryptjs = require("bcryptjs");
-const user  = require("../modeloUser/user");
+const multer = require("multer");
+
 const usersController = {
   login: (req, res) =>{
     res.render("Login");
   },
   processLogin: (req, res) => {
-    let userToLogin = user.findByField('email', req.body.email);
+    let userToLogin = db.User.findByField('email', req.body.email);
     if(userToLogin) {
       let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
       if (isOkThePassword) {
@@ -46,71 +44,77 @@ const usersController = {
       user: req.session.userLogged
     });
   },
-  index: (req, res) =>{
-    const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-    res.render("users", { usuarios: users });
-    },
+  index: async (req, res) =>{
+    let usuarios = await db.User.findAll()
+    return res.render("users", { usuarios });
+  },
   visualizarRegistro: function ( req , res) {
     res.render("Register");
-    },
-  detalle: (req, res) =>{
-    const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-    const usuario = users.find((p) => p.id == req.params.id);
-    res.render("userProfile", { usuario });
-    },
+  },
+  detalle: async (req, res) => {
+      try {
+        let usuario = await db.User.findByPk(req.params.id);
+        res.render("userProfile", { usuario });
+      } catch (error) {
+        console.log({error});
+      }
+  },
   recuperarPassword: (req, res) =>{
     res.render("RecuperarContraseña");
-    },
+  },
   create: (req, res) =>{
-    const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
     const resultValidation = validationResult(req);
-  if(resultValidation.isEmpty()){
-  const userNuevo = {
-    id: Date.now(),
-    nombre: req.body.nombre,
-    nacimiento: req.body.nacimiento,
-    pais: req.body.pais,
-    celular: req.body.celular,
-    email: req.body.email,
-    password: bcryptjs.hashSync(req.body.password, 10),
-    repetir: bcryptjs.hashSync(req.body.repetir, 10),
-    imagen: req.file ? req.file.filename : 'ova-logo.jpg',
+    if(resultValidation.isEmpty()){
+      db.Product.create({
+      nombre: req.body.nombre,
+      nacimiento: req.body.nacimiento,
+      pais: req.body.pais,
+      celular: req.body.celular,
+      email: req.body.email,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      imagen: req.file ? req.file.filename : 'ova-logo.jpg',
+      })
+      .then(()=> {
+        return res.redirect("/users")})           
+      .catch(error => res.send(error))
+    }else{
+      return res.render('Register', {
+      errors: resultValidation.mapped(),
+      oldData: req.body
+      })
     }
-users.push(userNuevo);
-const data = JSON.stringify(users, null, " ");
-fs.writeFileSync(usersFilePath, data);
-res.redirect("/users");
-}else{
-  return res.render('Register', {
-    errors: resultValidation.mapped(),
-    oldData: req.body
-  })
-}
   },
-  edit: (req, res) => {
-      const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-      const usuario = users.find((p) => p.id == req.params.id);
-      res.render("FormEditarUsuario", { userToEdit: usuario });
+  edit: async (req, res) => {
+      try {
+        let userToEdit = await db.Product.findByPk(req.params.id);
+        res.render("FormEditarUsuario", { userToEdit });
+      } catch (error) {
+        console.log({error});
+      }
+  },
+  update: (req, res) => {
+    db.User.update({
+      nombre: req.body.nombre,
+      email : req.body.email,
+      password : req.body.password,
     },
-    update: (req, res) => {
-      const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-      users.forEach(p => {
-        if(p.id == req.params.id){
-          p.nombre = req.body.nombre,
-          p.email = req.body.email,
-          p.password = req.body.password
-        }
-      });
-      const data = JSON.stringify(users, null, " ");
-      fs.writeFileSync(usersFilePath, data);
-      res.redirect("/users/detail/" + req.params.id)
-    },
+    {where: {
+      id: req.params.id
+      }
+    })
+    .then(()=> {
+      return res.redirect("/users/detail/" + req.params.id)})       // son dos puntos por que retrocede un slash product     
+    .catch(error => res.send(error))
+  },
   destroy: (req, res) => {
-    let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-    users = users.filter((p) => p.id != req.params.id);
-    const data = JSON.stringify(users, null, " ");
-    fs.writeFileSync(usersFilePath, data);
-    res.redirect("/users");
+    db.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    then(()=> {
+      return res.redirect("/users")})       // son dos puntos por que retrocede un slash product     
+    .catch(error => res.send(error));
   },
-  };
+};
 module.exports = usersController;

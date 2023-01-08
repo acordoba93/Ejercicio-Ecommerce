@@ -12,8 +12,8 @@ const multer = require("multer");
 const controller = {
   index: async (req, res) => {
     let products = await db.Product.findAll()
-      return res.render("products", { products });
-    },
+    return res.render("products", { products });
+  },
   detalle: async (req, res) => {
     try {
       let product = await db.Product.findByPk(req.params.id);
@@ -23,17 +23,13 @@ const controller = {
     }
   },
   create: async (req, res) => {
-  
-    let talles = await db.Size.findAll()
-    console.log(talles);
-      return res.render("FormCrearProducto", { talles });
-    },
+    let talles = await db.Size.findAll();
+    return res.render("FormCrearProducto", { talles });
+  },
   store: (req, res) => {
     const resultValidation = validationResult(req);
-      if(resultValidation.isEmpty()){
-       console.log(req.body);
-    db.Product.create({
-
+    if(resultValidation.isEmpty()){
+      db.Product.create({
       //product_id: 7,
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
@@ -44,15 +40,13 @@ const controller = {
       })
       .then(()=> {
         return res.redirect('/products')})           
-    .catch(error => res.send(error))
-
-  }else{
-  return res.render('FormCrearProducto', {
-    errors: resultValidation.mapped(),
-    oldData: req.body
-  })
-}
-
+      .catch(error => res.send(error))
+    }else{
+      return res.render('FormCrearProducto', {
+      errors: resultValidation.mapped(),
+      oldData: req.body
+      })
+    }
   },
   edit: async (req, res) => {
     try {
@@ -61,33 +55,32 @@ const controller = {
     } catch (error) {
       console.log({error});
     }
-
   },
   update : (req, res) => {
-        
     db.Product.update({
-        nombre: req.body.nombre,
-        descripcion: req.body.descripcion,
-        talle_id: 3,
-        precio: req.body.precio,
-        categoria_id: 2,
-      },
-      {where: {
-        id: req.params.id
-      }}
-)
-.then(()=> {
-    return res.redirect('../products')})       // son dos puntos por que retrocede un slash product     
-.catch(error => res.send(error))
-      },
-
+      nombre: req.body.nombre,
+      descripcion: req.body.descripcion,
+      talle_id: 3,
+      precio: req.body.precio,
+      categoria_id: 2,
+    },
+    {where: {
+      id: req.params.id
+      }
+    })
+    .then(()=> {
+      return res.redirect('../products')})       // son dos puntos por que retrocede un slash product     
+    .catch(error => res.send(error))
+  },
   destroy: (req, res) => {
-    let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    products = products.filter((p) => p.id != req.params.id);
-
-    const data = JSON.stringify(products, null, " ");
-    fs.writeFileSync(productsFilePath, data);
-    res.redirect("/products");  
+    db.Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    then(()=> {
+      return res.redirect("/products")})       // son dos puntos por que retrocede un slash product     
+    .catch(error => res.send(error));  
   },
 };
 
