@@ -20,10 +20,10 @@
 			</div>
 			<div class="button-options">
 				<a href="/carrito" class="cart-btn">Añadir al carrito</a>
-				<form action="/users/delete/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+				<form action="/users/delete/<%= usuario.usuario_id %>?_method=DELETE" method="POST" style="display: inline-flex">
 				  <button type="submit" class="action-button-delete">Eliminar Usuario</button>
 				</form>
-				<a href="/users/edit/<%= usuario.id %>" class="action-button-edit">Editar Usuario</a>
+				<a href="/users/edit/<%= usuario.usuario_id %>" class="action-button-edit">Editar Usuario</a>
 			  </div>
 
 

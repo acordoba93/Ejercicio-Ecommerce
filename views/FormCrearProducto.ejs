@@ -86,14 +86,12 @@
 									class="form-select <%= locals.errors && errors.categoria ? 'is-invalid' : null %>"
 						 		>
 					  			<option value="">Elegí una categoría</option>
-					  			<%  
-									let categorias = ["En oferta","Precio de lista"];
-					  			%>
+								
 								<% for (const categoria of categorias) { %>
 									<option 
-										value="<%= categoria %>"
+										value="<%= categoria.categoria_id %>"
 										<%= locals.oldData && (categoria === oldData.categoria) ? 'selected' : null %> 
-									> <%= categoria %> </option>
+									> <%= categoria.nombre %> </option>
 								<% } %>
 					  			</select>
 								<% if (locals.errors && errors.categoria) { %>

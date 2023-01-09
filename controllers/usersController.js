@@ -3,22 +3,31 @@ const { validationResult } = require('express-validator');
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
+const bcryptjs = require('bcryptjs');
 
 const usersController = {
   login: (req, res) =>{
     res.render("Login");
   },
-  processLogin: (req, res) => {
-    let userToLogin = db.User.findByField('email', req.body.email);
+  processLogin: async (req, res) => {
+    let userToLogin = await db.User.findOne({
+      where: {
+        email: req.body.email
+        }
+    })
+
     if(userToLogin) {
       let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+
       if (isOkThePassword) {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
         if(req.body.remember_user) {
           res.cookie("correo", req.body.email, { maxAge: (1000 * 60) * 20 })
         }
-        return res.redirect("/users/profile");
+        //let usuario = await db.User.findByPk(req.params.id);
+        //console.log(usuario);
+      res.render("userProfile", { usuario: userToLogin });
       }
       return res.render('Login', {
         errors: {
@@ -35,6 +44,7 @@ const usersController = {
         }
       }
     });
+  
   },
   admin: (req, res) => {
     res.send("Hola Administrador: " + req.query.user);
@@ -56,7 +66,7 @@ const usersController = {
         let usuario = await db.User.findByPk(req.params.id);
         res.render("userProfile", { usuario });
       } catch (error) {
-        console.log({error});
+        console.log(error);
       }
   },
   recuperarPassword: (req, res) =>{
@@ -65,7 +75,7 @@ const usersController = {
   create: (req, res) =>{
     const resultValidation = validationResult(req);
     if(resultValidation.isEmpty()){
-      db.Product.create({
+      db.User.create({
       nombre: req.body.nombre,
       nacimiento: req.body.nacimiento,
       pais: req.body.pais,
@@ -86,35 +96,39 @@ const usersController = {
   },
   edit: async (req, res) => {
       try {
-        let userToEdit = await db.Product.findByPk(req.params.id);
+        let userToEdit = await db.User.findByPk(req.params.id);
         res.render("FormEditarUsuario", { userToEdit });
       } catch (error) {
-        console.log({error});
+        console.log(error);
       }
   },
-  update: (req, res) => {
-    db.User.update({
-      nombre: req.body.nombre,
-      email : req.body.email,
-      password : req.body.password,
-    },
-    {where: {
-      id: req.params.id
-      }
-    })
-    .then(()=> {
-      return res.redirect("/users/detail/" + req.params.id)})       // son dos puntos por que retrocede un slash product     
-    .catch(error => res.send(error))
+  update : async function (req, res) {
+    try { 
+      const newUser = await db.User.update({
+        nombre: req.body.nombre,
+        email : req.body.email,
+        password : req.body.password
+      },{
+        where: {
+          usuario_id: req.params.id
+        }
+      });
+        res.redirect('/users');
+    } catch (error) {
+      console.log(error);
+    }
   },
-  destroy: (req, res) => {
-    db.User.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-    then(()=> {
-      return res.redirect("/users")})       // son dos puntos por que retrocede un slash product     
-    .catch(error => res.send(error));
-  },
+  destroy: async (req, res) => {
+    try {
+      await db.User.destroy({
+        where: {
+          usuario_id: req.params.id
+        }});
+        let usuarios = await db.User.findAll();
+        res.redirect("/users");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
 module.exports = usersController;

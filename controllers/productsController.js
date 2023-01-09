@@ -4,11 +4,6 @@ const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
 
-//const productsFilePath = path.join(__dirname, "../data/products.json");
-//const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
-//const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 const controller = {
   index: async (req, res) => {
     let products = await db.Product.findAll()
@@ -19,69 +14,67 @@ const controller = {
       let product = await db.Product.findByPk(req.params.id);
       res.render("ProductDetail", { product });
     } catch (error) {
-      console.log({error});
+      console.log(error);
     }
   },
   create: async (req, res) => {
     let talles = await db.Size.findAll();
-    return res.render("FormCrearProducto", { talles });
+    let categorias = await db.Category.findAll();
+    return res.render("FormCrearProducto", { talles, categorias });
   },
-  store: (req, res) => {
-    const resultValidation = validationResult(req);
-    if(resultValidation.isEmpty()){
-      db.Product.create({
-      //product_id: 7,
+  store: async(req, res) => {
+      try{
+        const nuevoProducto = await db.Product.create({
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
       talle_id: req.body.talle,
       precio: req.body.precio,
-      categoria_id: 1,
+      categoria_id: req.body.categoria,
       imagenProducto: req.file ? req.file.filename : 'ova-logo.jpg',
-      })
-      .then(()=> {
-        return res.redirect('/products')})           
-      .catch(error => res.send(error))
-    }else{
-      return res.render('FormCrearProducto', {
-      errors: resultValidation.mapped(),
-      oldData: req.body
-      })
-    }
+      });
+        res.redirect('/products');
+        } catch (error) {
+          console.log(error);
+      }
   },
   edit: async (req, res) => {
     try {
-      let productToEdit = await db.Product.findByPk(req.params.id);
+      const productToEdit = await db.Product.findByPk(req.params.id);
       res.render("FormEditarProducto", { productToEdit });
     } catch (error) {
-      console.log({error});
+      console.log(error);
     }
   },
-  update : (req, res) => {
-    db.Product.update({
-      nombre: req.body.nombre,
-      descripcion: req.body.descripcion,
-      talle_id: 3,
-      precio: req.body.precio,
-      categoria_id: 2,
-    },
-    {where: {
-      id: req.params.id
-      }
-    })
-    .then(()=> {
-      return res.redirect('../products')})       // son dos puntos por que retrocede un slash product     
-    .catch(error => res.send(error))
+  update : async function (req, res) {
+    try { 
+      const newProduct = await db.Product.update({
+        nombre: req.body.nombre,
+        precio: req.body.precio,
+        talle: req.body.talle,
+        categoria: req.body.categoria,
+        descripcion: req.body.descripcion
+      },{
+        where: {
+          product_id: req.params.id
+        }
+      });
+        res.redirect('/products');
+    } catch (error) {
+      console.log(error);
+    }
   },
-  destroy: (req, res) => {
-    db.Product.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-    then(()=> {
-      return res.redirect("/products")})       // son dos puntos por que retrocede un slash product     
-    .catch(error => res.send(error));  
-  },
+  destroy: async (req, res) => {
+    try {
+      await db.Product.destroy({
+        where: {
+          product_id: req.params.id
+        }});
+        let products = await db.Product.findAll();
+      res.render("products", { products });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
 
 module.exports = controller;
