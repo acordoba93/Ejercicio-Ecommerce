@@ -25,7 +25,7 @@ const usersController = {
         if(req.body.remember_user) {
           res.cookie("correo", req.body.email, { maxAge: (1000 * 60) * 20 })
         }
-        //let usuario = await db.User.findByPk(req.params.id);
+        let usuario = await db.User.findByPk(req.params.id);
         //console.log(usuario);
       res.render("userProfile", { usuario: userToLogin });
       }
@@ -43,9 +43,9 @@ const usersController = {
           msg: 'No se encuentra este email en nuestra base de datos'
         }
       }
-    });
-  
-  },
+ });
+
+   },
   admin: (req, res) => {
     res.send("Hola Administrador: " + req.query.user);
   },
@@ -85,7 +85,7 @@ const usersController = {
       imagen: req.file ? req.file.filename : 'ova-logo.jpg',
       })
       .then(()=> {
-        return res.redirect("/users")})           
+        return res.redirect("/users")})
       .catch(error => res.send(error))
     }else{
       return res.render('Register', {
@@ -103,7 +103,7 @@ const usersController = {
       }
   },
   update : async function (req, res) {
-    try { 
+    try {
       const newUser = await db.User.update({
         nombre: req.body.nombre,
         email : req.body.email,

@@ -13,13 +13,14 @@
 
 			<div>
 				<h2>Bienvenido <%= usuario.nombre %> </h2>
-				<img src="/images/usuarios/<%= usuario.imagen %> ">
+				<img src="/images/usuarios/<%= usuario.imagen %> " width="200px" sizes="200px">
 				<br>
 				<br>
 				<div><%= usuario.email %> </div>
 			</div>
 			<div class="button-options">
-				<a href="/carrito" class="cart-btn">Añadir al carrito</a>
+				<form action="/carrito" method="POST" style="display: inline-flex">
+					<button type="submit" class="action-button-delete"></button>  Añadir al carrito
 				<form action="/users/delete/<%= usuario.usuario_id %>?_method=DELETE" method="POST" style="display: inline-flex">
 				  <button type="submit" class="action-button-delete">Eliminar Usuario</button>
 				</form>
