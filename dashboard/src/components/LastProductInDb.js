@@ -46,7 +46,7 @@ class LastProduct extends Component {
             <img
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: "40rem" }}
-              src= {images('./remera-sq.8.jpg')}
+              src= {`http://localhost:3000/images/${this.state.lastProduct.imagenProducto}`}
               alt=" product image "
             />
           </div>

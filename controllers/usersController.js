@@ -26,8 +26,10 @@ const usersController = {
           res.cookie("correo", req.body.email, { maxAge: (1000 * 60) * 20 })
         }
         let usuario = await db.User.findByPk(req.params.id);
+        console.log("userToLogin", userToLogin)
         //console.log(usuario);
-      res.render("userProfile", { usuario: userToLogin });
+      res.render("userProfile", { usuario: userToLogin.toJSON() });
+
       }
       return res.render('Login', {
         errors: {
@@ -50,8 +52,10 @@ const usersController = {
     res.send("Hola Administrador: " + req.query.user);
   },
   profile: (req, res) => {
+    console.log("usuario logueado", req.session.userLogged)
     res.render("userProfile", {
-      user: req.session.userLogged
+    
+      usuario: req.session.userLogged
     });
   },
   index: async (req, res) =>{

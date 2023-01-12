@@ -13,12 +13,15 @@ router.get("/admin", admin, usersController.admin);
 
 router.get("/login", guestMiddleware, usersController.login);
 router.post("/login", usersController.processLogin);
+
 router.get("/profile", authMiddleware, usersController.profile);
 
 
 
 router.get("/register", guestMiddleware, usersController.visualizarRegistro);
+
 router.post("/register", (upload.single('imagen')), validarUsuarioNuevo, usersController.create);
+
 router.get("/detail/:id", usersController.detalle);
 
 router.get("/edit/:id", usersController.edit);

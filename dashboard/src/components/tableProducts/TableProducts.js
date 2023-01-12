@@ -14,7 +14,6 @@ class TableCoffee extends Component {
         return response.json()
       })
       .then((coffee) => {
-        console.log(coffee.products[0])
         this.setState({
           tableRowsData: coffee.products[0],
         });
